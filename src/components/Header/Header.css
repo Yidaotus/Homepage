@@ -1,0 +1,15 @@
+.header-container {
+	@apply sticky top-4 z-50 text-5xl flex flex-row justify-between items-center;
+}
+
+.logo-container {
+	@apply font-semibold text-default;
+}
+
+.menu-active {
+	@apply text-green border-b border-green;
+}
+
+.menu-container {
+	@apply flex flex-row justify-between space-x-4 text-2xl items-center;
+}

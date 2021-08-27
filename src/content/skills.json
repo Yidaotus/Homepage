@@ -1,0 +1,41 @@
+[
+	{
+		"title": "FullStack",
+		"skills": [
+			"Vue.js",
+			"React.js",
+			"MongoDB",
+			"MySQL",
+			"Express.js",
+			"TypeScript"
+		]
+	},
+	{
+		"title": "CRM (Salesforce)",
+		"skills": [
+			"APEX",
+			"Visualforce",
+			"Lightning Web Components",
+			"Administration"
+		]
+	},
+	{
+		"title": "Scripting & Other",
+		"skills": [
+			"Rust",
+			"C++11",
+			"Python",
+			"Bash",
+			"GIT",
+			"Java"
+		]
+	},
+	{
+		"title": "DevOPS",
+		"skills": [
+			"Linux administration",
+			"Docker",
+			"Firewall administration (PfSense)"
+		]
+	}
+]

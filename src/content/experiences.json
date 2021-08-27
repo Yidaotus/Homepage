@@ -1,0 +1,36 @@
+[
+	{
+		"title": "Technical Consultant",
+		"company": "Self employed",
+		"startDate": "2021-08-01",
+		"endDate": null,
+		"activities": [
+			"Salesforce development consulting"
+		]
+	},
+	{
+		"title": "Software Developer",
+		"company": "Kesselheld GmbH",
+		"startDate": "2021-04-01",
+		"endDate": null,
+		"activities": [
+			"scrum master",
+			"Salesforce LWC/LWR development",
+			"react.js development"
+		]
+	},
+	{
+		"title": "Junior Software Developer",
+		"company": "Kesselheld GmbH",
+		"startDate": "2018-08-01",
+		"endDate": "2021-05-30",
+		"activities": [
+			"guide and instruct interns",
+			"workshops about agile development / git version management",
+			"vue.js / mysql and express.js development",
+			"Salesforce administration",
+			"Salesforce development in APEX / Visualforce ",
+			"Linux administration"
+		]
+	}
+]
