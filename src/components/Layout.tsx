@@ -3,13 +3,17 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 const Layout: React.FC = ({ children }) => (
-	<div className="bg-green-light font-sans min-h-screen">
-		<div className="mx-auto container">
-			<Header />
-			<main className="h-full bg-blue-200 py-6 flex flex-col justify-center sm:py-12 xl:py-56 2xl:py-80">
-				{children}
+	<div className=" bg-green-light">
+		<div className="flex flex-col h-screen justify-between mx-32">
+			<header className="h-10 mt-2">
+				<Header />
+			</header>
+			<main className="mb-auto h-screen flex justify-center">
+				<div className="m-auto w-full">{children}</div>
 			</main>
-			<Footer />
+			<footer className="h-16 bg-blue-500">
+				<Footer />
+			</footer>
 		</div>
 	</div>
 );
