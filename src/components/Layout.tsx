@@ -3,15 +3,11 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 
 const Layout: React.FC = ({ children }) => (
-	<div className=" bg-green-light">
-		<div className="flex flex-col h-screen justify-between mx-32">
-			<header className="h-10 mt-2">
-				<Header />
-			</header>
-			<main className="mb-auto h-screen flex justify-center">
-				<div className="m-auto w-full">{children}</div>
-			</main>
-			<footer className="h-16 bg-blue-500">
+	<div className="bg-white dark:bg-black min-h-screen">
+		<div className="text-black dark:text-white max-w-3xl 2xl:max-w-4xl m-auto">
+			<Header />
+			<main className="flex justify-center m-4 sm:my-8">{children}</main>
+			<footer className="h-16">
 				<Footer />
 			</footer>
 		</div>

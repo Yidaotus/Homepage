@@ -14,5 +14,5 @@ module.exports = {
         failOnError: false,
       },
     },
-  }, 'gatsby-plugin-postcss'],
+  }, 'gatsby-plugin-postcss', 'gatsby-plugin-fontawesome-css'],
 };

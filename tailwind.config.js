@@ -2,40 +2,41 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
-    fontFamily: {
-      sans: ["Dosis"],
-      bold: ["Dosis Bold"],
-      semibold: ["Dosis SemiBold"],
-      extrabold: ["Dosis ExtraBold"]
+    extend: {
+      fontFamily: {
+        sans: ["Poppins Regular"],
+        bold: ["Poppins Bold"],
+        semibold: ["Poppins SemiBold"],
+        extrabold: ["Poppins ExtraBold"]
+      },
+      colors: {
+        default: {
+          DEFAULT: "#3A3A3A",
+          light: "#636363"
+        },
+        subtitle: "#AC92A6",
+        transparent: "transparent",
+        current: "currentColor",
+        black: "#1C1F21",
+        white: "#F5F5F5",
+        gray: colors.trueGray,
+        indigo: colors.indigo,
+        red: colors.rose,
+        yellow: colors.amber,
+        green: {
+          DEFAULT: "#73937E",
+          light: "#D1DCD5",
+          dark: "#2C3A31"
+        },
+      },
     },
-    colors: {
-      default: {
-        DEFAULT: "#3A3A3A",
-        light: "#636363"
-      },
-      subtitle: "#AC92A6",
-      transparent: "transparent",
-      current: "currentColor",
-      black: {
-        light: "#42444C",
-        DEFAULT: "#383A42",
-      },
-      white: colors.white,
-      gray: colors.trueGray,
-      indigo: colors.indigo,
-      red: colors.rose,
-      yellow: colors.amber,
-      green: {
-        light: "#F1F9F1",
-        DEFAULT: "#548687",
+    variants: {
+      extend: {
+        ringWidth: ["hover"]
       },
     },
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    plugins: [],
+  }
 };

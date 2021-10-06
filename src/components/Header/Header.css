@@ -1,5 +1,5 @@
 .header-container {
-	@apply sticky top-4 z-50 text-5xl flex flex-row justify-between items-center;
+	@apply sticky top-4 z-50 md:text-5xl text-2xl flex flex-row justify-between items-center ml-4;
 }
 
 .logo-container {
@@ -11,5 +11,5 @@
 }
 
 .menu-container {
-	@apply flex flex-row justify-between space-x-4 text-2xl items-center;
+	@apply flex flex-row justify-between space-x-4 text-2xl items-center hidden md:flex;
 }

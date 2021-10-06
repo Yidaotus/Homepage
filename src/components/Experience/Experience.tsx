@@ -15,40 +15,62 @@ const formatDate = (dateString: string) => {
 };
 
 const DATE_PLACEHOLDER = "Present";
+const dateString = (start: string, end: string | null) =>
+	`${formatDate(start)} - ${end ? formatDate(end) : DATE_PLACEHOLDER}`;
 
 const Experience: React.FC = () => (
-	<div className="space-y-4 relative">
-		<div
-			className="absolute border-l-2 h-full inset-x-32 border-default-light rounded-sm w-2"
-			style={{ marginLeft: "4px" }}
-		/>
+	<div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-col">
 		{ExperienceData.sort(sortExperience).map((experience) => (
-			<div
-				className="flex justify-start items-center"
-				key={experience.title}
-			>
-				<div className="text-default-light w-28">
-					{formatDate(experience.startDate)}
-					{" - "}
-					{experience.endDate
-						? formatDate(experience.endDate)
-						: DATE_PLACEHOLDER}
-				</div>
-				<div className="rounded-full w-3 h-3 bg-default-light mx-4 " />
-				<div className="space-y-0">
-					<div className=" text-default-light text-3xl font-medium">
-						{experience.title}
-					</div>
-					<div className="text-subtitle text-xl">
+			<>
+				<div className="flex flex-col sm:w-1/2 md:hidden">
+					<div className="font-bold text-2xl">{experience.title}</div>
+					<div className="italic md:mb-4 text-green text-lg">
 						{experience.company}
 					</div>
-					<ul className="list-disc list-inside text-default-light pl-3">
-						{experience.activities.map((activity) => (
-							<li key={activity}>{activity}</li>
-						))}
-					</ul>
+					<div className="mb-4 mt-2">
+						<div className="font-semibold text-gray-600 dark:text-gray-400">
+							{dateString(
+								experience.startDate,
+								experience.endDate
+							)}
+						</div>
+					</div>
+					<div className="mb-10">
+						<ul className="list-disc list-inside text-gray-600 dark:text-gray-400 sm:pl-2">
+							{experience.activities.map((activity) => (
+								<li key={activity}>{activity}</li>
+							))}
+						</ul>
+					</div>
 				</div>
-			</div>
+
+				<div className="hidden md:flex relative">
+					<div className="w-1/5 self-center">
+						<div className="font-semibold text-gray-600 dark:text-gray-400">
+							{dateString(
+								experience.startDate,
+								experience.endDate
+							)}
+						</div>
+					</div>
+					<div className="border-r-4 border-black border-opacity-80 dark:border-white dark:border-opacity-80 mr-4" />
+					<div>
+						<div className="font-bold text-2xl">
+							{experience.title}
+						</div>
+						<div className="italic md:mb-4 text-green text-lg">
+							{experience.company}
+						</div>
+						<div className="mb-10">
+							<ul className="list-disc list-inside pl-3 text-gray-600 dark:text-gray-400">
+								{experience.activities.map((activity) => (
+									<li key={activity}>{activity}</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</>
 		))}
 	</div>
 );

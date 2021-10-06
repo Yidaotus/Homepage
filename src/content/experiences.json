@@ -5,7 +5,7 @@
 		"startDate": "2021-08-01",
 		"endDate": null,
 		"activities": [
-			"Salesforce development consulting"
+			"Salesforce technical consulting"
 		]
 	},
 	{
@@ -14,9 +14,9 @@
 		"startDate": "2021-04-01",
 		"endDate": null,
 		"activities": [
-			"scrum master",
+			"Scrum master",
 			"Salesforce LWC/LWR development",
-			"react.js development"
+			"Fullstack development: React.js / mongoDB / Redux"
 		]
 	},
 	{
@@ -25,12 +25,13 @@
 		"startDate": "2018-08-01",
 		"endDate": "2021-05-30",
 		"activities": [
-			"guide and instruct interns",
-			"workshops about agile development / git version management",
-			"vue.js / mysql and express.js development",
+			"Fullstack development: vue.js / mysql / express.js",
 			"Salesforce administration",
 			"Salesforce development in APEX / Visualforce ",
-			"Linux administration"
+			"Linux administration",
+			"Guide and instruct interns",
+			"Workshops about agile development",
+			"Version management with GIT"
 		]
 	}
 ]
