@@ -1,7 +1,12 @@
 import React from "react";
-import ExperienceData from "../../content/experiences.json";
 
-type IExperienceData = typeof ExperienceData[0];
+export interface IExperienceData {
+	title: string;
+	startDate: string;
+	endDate: string;
+	company: string;
+	activities: Array<string>;
+}
 
 const sortExperience = (a: IExperienceData, b: IExperienceData) =>
 	new Date(b.startDate).getTime() - new Date(a.startDate).getTime();
@@ -18,24 +23,37 @@ const DATE_PLACEHOLDER = "Present";
 const dateString = (start: string, end: string | null) =>
 	`${formatDate(start)} - ${end ? formatDate(end) : DATE_PLACEHOLDER}`;
 
-const Experience: React.FC = () => (
-	<div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-col">
-		{ExperienceData.sort(sortExperience).map((experience) => (
-			<>
-				<div className="flex flex-col sm:w-1/2 md:hidden">
-					<div className="font-bold text-2xl">{experience.title}</div>
-					<div className="italic md:mb-4 text-green text-lg">
-						{experience.company}
+const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
+	experiences,
+}) => (
+	<div className="flex flex-col md:grid grid-cols-9 sm:p-2">
+		{experiences.sort(sortExperience).map((experience) => (
+			<div className="flex md:contents" key={experience.title}>
+				<div className="hidden md:block my-4 col-start-1 col-end-3 mr-auto w-full self-center pb-1.5">
+					<p className="leading-tight text-right">
+						{dateString(experience.startDate, experience.endDate)}
+					</p>
+				</div>
+				<div className="hidden sm:block col-start-3 col-end-4 mr-2 sm:mr-10 md:mx-auto relative">
+					<div className="h-full w-4 flex items-center justify-center">
+						<div className="h-full w-1 bg-gray-600 dark:bg-gray-300 pointer-events-none" />
 					</div>
-					<div className="mb-4 mt-2">
-						<div className="font-semibold text-gray-600 dark:text-gray-400">
+					<div className="w-4 h-4 absolute top-1/2 -mt-3 rounded-full bg-gray-600 dark:bg-gray-300 shadow" />
+				</div>
+				<div className="col-start-4 col-end-10 pd-0 md:p-4 my-4 mr-auto w-full">
+					<p className="font-semibold text-2xl mb-1">
+						{experience.title}
+					</p>
+					<p className="font-semibold text-lg text-green mb-1">
+						{experience.company}
+					</p>
+					<div className="leading-tight text-justify">
+						<p className="md:hidden">
 							{dateString(
 								experience.startDate,
 								experience.endDate
 							)}
-						</div>
-					</div>
-					<div className="mb-10">
+						</p>
 						<ul className="list-disc list-inside text-gray-600 dark:text-gray-400 sm:pl-2">
 							{experience.activities.map((activity) => (
 								<li key={activity}>{activity}</li>
@@ -43,34 +61,7 @@ const Experience: React.FC = () => (
 						</ul>
 					</div>
 				</div>
-
-				<div className="hidden md:flex relative">
-					<div className="w-1/5 self-center">
-						<div className="font-semibold text-gray-600 dark:text-gray-400">
-							{dateString(
-								experience.startDate,
-								experience.endDate
-							)}
-						</div>
-					</div>
-					<div className="border-r-4 border-black border-opacity-80 dark:border-white dark:border-opacity-80 mr-4" />
-					<div>
-						<div className="font-bold text-2xl">
-							{experience.title}
-						</div>
-						<div className="italic md:mb-4 text-green text-lg">
-							{experience.company}
-						</div>
-						<div className="mb-10">
-							<ul className="list-disc list-inside pl-3 text-gray-600 dark:text-gray-400">
-								{experience.activities.map((activity) => (
-									<li key={activity}>{activity}</li>
-								))}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</>
+			</div>
 		))}
 	</div>
 );

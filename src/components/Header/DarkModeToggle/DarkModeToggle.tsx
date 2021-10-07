@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 
+type ThemeValues = "dark" | "light";
 const DARK_MODE_CLASS = "dark";
 
 const DarkModeToggle: React.FC = () => {
-	const [currentTheme, setCurrentTheme] = useState<"light" | "dark">("light");
+	const [currentTheme, setCurrentTheme] = useState<ThemeValues>("light");
 
 	useEffect(() => {
-		const lsTheme = localStorage.getItem("theme");
-		if (lsTheme && lsTheme === "dark") {
+		const lsTheme = localStorage.getItem("theme") as ThemeValues;
+		if (lsTheme) {
+			setCurrentTheme(lsTheme);
+		} else if (
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches
+		) {
 			setCurrentTheme("dark");
 		}
 	}, []);
@@ -15,10 +21,10 @@ const DarkModeToggle: React.FC = () => {
 	useEffect(() => {
 		if (currentTheme === "dark") {
 			document.body.classList.add(DARK_MODE_CLASS);
-			localStorage.setItem("theme", "dark");
+			localStorage.setItem("theme", currentTheme);
 		} else {
 			document.body.classList.remove(DARK_MODE_CLASS);
-			localStorage.removeItem("theme");
+			localStorage.setItem("theme", currentTheme);
 		}
 	}, [currentTheme]);
 

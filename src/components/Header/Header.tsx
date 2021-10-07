@@ -20,7 +20,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, text }) => (
 );
 
 const Header: React.FC = () => (
-	<header className="flex justify-between mx-4 pt-4 sm:pt-8 md:mx-0 sticky sm:relative top-0 sm:top-0 bg-white dark:bg-black border-b-2 sm:border-b-0">
+	<header className="flex justify-between items-center mx-4 pt-1 sm:pt-4 md:pt-8 md:mx-0 sticky sm:relative top-0 sm:top-0 bg-white dark:bg-black border-b-2 sm:border-b-0 z-50">
 		<nav>
 			<MobileMenu />
 			<ul className="hidden md:flex space-x-2">

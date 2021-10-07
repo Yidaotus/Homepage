@@ -1,35 +1,43 @@
 import React from "react";
-import SkillData from "../../content/skills.json";
 
-const Skills: React.FC = () => (
+export interface ISkillData {
+	title: string;
+	skills: Array<{
+		name: string;
+		level: number;
+	}>;
+}
+
+const Skills: React.FC<{ skills: Array<ISkillData> }> = ({ skills }) => (
 	<div className="space-y-4">
-		{SkillData.map((skill) => {
-			const maxSkillLevel = skill.skills.reduce(
-				(acc, [, level]) => (acc > Number(level) ? acc : Number(level)),
+		{skills.map((skillEntry) => {
+			const maxSkillLevel = skillEntry.skills.reduce(
+				(acc, { level }) => (acc > level ? acc : level),
 				0
 			);
 			return (
-				<div className="">
-					<div className=" text-black dark:text-white text-3xl font-medium">
-						{skill.title}
-					</div>
+				<div key={skillEntry.title}>
+					<p className="text-2xl mb-1 text-black dark:text-white">
+						{skillEntry.title}
+					</p>
 					<ul className="text-white dark:text-black font-medium text-base space-y-2">
-						{skill.skills
-							.sort(([, a], [, b]) => Number(b) - Number(a))
-							.map(([skillName, skillLevel]) => (
-								<li className="rounded-sm bg-gray-600 dark:bg-gray-300 px-3 w-min inline-block whitespace-nowrap mr-2 relative">
-									{skillName}
+						{skillEntry.skills
+							.sort((s1, s2) => s2.level - s1.level)
+							.map(({ name, level }) => (
+								<li
+									key={name}
+									className="rounded-sm bg-gray-600 dark:bg-gray-300 px-3 w-min inline-block whitespace-nowrap mr-2 relative"
+								>
+									{name}
 									<div
 										className="bg-green absolute left-0 right-0 bottom-0"
 										style={{
 											borderBottomLeftRadius: "10px",
 											borderBottomRightRadius:
-												skillLevel === 3
-													? "10px"
-													: "0px",
+												level === 3 ? "10px" : "0px",
 											height: "2px",
 											width: `${
-												Number(skillLevel) *
+												Number(level) *
 												(100 / maxSkillLevel)
 											}%`,
 										}}
