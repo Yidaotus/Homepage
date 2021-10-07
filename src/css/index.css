@@ -7,7 +7,7 @@
 	font-family: "Poppins Light";
 	font-style: normal;
 	src: local("Poppins Light"), local("Poppins-Light"),
-		url("../../public/static/font/Poppins-Light.ttf") format("woff2");
+		url("../fonts/Poppins-Light.ttf") format("woff2");
 }
 
 @font-face {
@@ -15,7 +15,7 @@
 	font-family: "Poppins Regular";
 	font-style: normal;
 	src: local("Poppins Regular"), local("Poppins-Regular"),
-		url("../../public/static/font/Poppins-Regular.ttf") format("woff2");
+		url("../fonts/Poppins-Regular.ttf") format("woff2");
 }
 
 @font-face {
@@ -23,7 +23,7 @@
 	font-family: "Poppins Bold";
 	font-style: normal;
 	src: local("Poppins Bold"), local("Poppins-Bold"),
-		url("../../public/static/font/Poppins-Bold.ttf") format("woff2");
+		url("../fonts/Poppins-Bold.ttf") format("woff2");
 }
 
 @font-face {
@@ -31,5 +31,5 @@
 	font-family: "Poppins SemiBold";
 	font-style: normal;
 	src: local("Poppins SemiBold"), local("Poppins-SemiBold"),
-		url("../../public/static/font/Poppins-SemiBold.ttf") format("woff2");
+		url("../fonts/Poppins-SemiBold.ttf") format("woff2");
 }

@@ -20,14 +20,14 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<div className="flex flex-col space-y-16">
-				<div className="flex flex-col-reverse sm:flex-row items-start">
+			<div className="flex flex-col">
+				<div className="flex flex-col-reverse sm:flex-row items-start mb-16">
 					<div className="sm:w-2/3">
 						<H1>Daniel Voigt</H1>
 						<H2>
 							Software Developer / Musician / Language Enthusiast
 						</H2>
-						<p className="text-gray-600 dark:text-gray-400 mb-16">
+						<p className="text-gray-600 dark:text-gray-400">
 							Lorem ipsum dolor sit amet, consetetur sadipscing
 							elitr, sed diam nonumy eirmod tempor invidunt ut
 							labore et dolore magna aliquyam erat, sed diam
@@ -42,12 +42,12 @@ const IndexPage = () => {
 						/>
 					</div>
 				</div>
-				<div> 
+				<div className="mb-16">
 					<H1>Latest Posts</H1>
 					<H2>Latest posts from my Medium Blog</H2>
 					<MediumFeedQL />
 				</div>
-				<div>
+				<div className="mb-16">
 					<H1>Recent Hits</H1>
 					<H2>
 						Music is a key element of my life. Here is what

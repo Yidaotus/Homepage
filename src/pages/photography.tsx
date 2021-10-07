@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
-import Gallery from "react-photo-gallery";
 import { GraphQLType } from "../@types/ql";
 import Layout from "../components/Layout";
 import { H1, H2 } from "../components/Typography";

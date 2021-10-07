@@ -39,8 +39,8 @@ module.exports = {
         ringWidth: ["hover"]
       },
     },
-    plugins: [
-      require('@tailwindcss/typography'),
-    ],
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
