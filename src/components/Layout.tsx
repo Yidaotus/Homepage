@@ -4,7 +4,7 @@ import Header from "./Header/Header";
 
 const Layout: React.FC = ({ children }) => (
 	<div className="bg-white dark:bg-black min-h-screen">
-		<div className="text-black dark:text-white max-w-3xl 2xl:max-w-4xl m-auto">
+		<div className="text-black dark:text-white max-w-3xl m-auto">
 			<Header />
 			<main className="flex justify-center m-4 sm:my-8">{children}</main>
 			<footer className="h-16">

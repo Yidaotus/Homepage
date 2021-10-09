@@ -7,7 +7,7 @@ const H1: React.FC = ({ children }) => (
 );
 
 const H2: React.FC = ({ children }) => (
-	<h2 className="text-gray-700 dark:text-gray-200 mb-4">{children}</h2>
+	<h2 className="text-gray-700 dark:text-gray-200 mb-4 text-lg">{children}</h2>
 );
 
 const P: React.FC = ({ children }) => (

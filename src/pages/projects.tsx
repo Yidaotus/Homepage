@@ -1,25 +1,50 @@
+import { useStaticQuery, graphql } from "gatsby";
+import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
+import { GraphQLDataType } from "../@types/ql";
+import ContentBlock, {
+	IContentBlock,
+} from "../components/ContentBlock/ContentBlock";
 import Layout from "../components/Layout";
-import { H1, H2 } from "../components/Typography";
+import ProjectsQL from "../components/Project/ProjectsQL";
+import Spacer from "../components/Spacer";
 
-const IndexPage = () => (
-	<Layout>
-		<div className="flex justify-center content-center flex-col">
-			<div className="flex flex-col sm:flex-row items-start mb-16">
-				<div className="w-1/2 sm:w-1/3 m-auto" />
-				<div className="sm:w-2/3 sm:ml-8 self-center">
-					<H1>Recent Projects</H1>
-					<H2>Recent Projects I&apos;ve been working on.</H2>
-					<p className="text-gray-600 dark:text-gray-400">
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-						sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero
-						eos et accusam et justo duo dolores et ea rebum.
-					</p>
-				</div>
+const INDEXBLOCK_QL_ENDPOINT = "contentBlocksJson" as const;
+const ProjectsPage = () => {
+	const projectsBlockQuery = useStaticQuery<
+		GraphQLDataType<typeof INDEXBLOCK_QL_ENDPOINT, IContentBlock>
+	>(graphql`
+		{
+			contentBlocksJson(id: { eq: "projects" }) {
+				id
+				reversed
+				subtitle
+				content
+				title
+				image {
+					childImageSharp {
+						gatsbyImageData(
+							width: 305
+							layout: FULL_WIDTH
+							placeholder: BLURRED
+						)
+					}
+				}
+			}
+		}
+	`);
+	const projectsBlockData = projectsBlockQuery[INDEXBLOCK_QL_ENDPOINT];
+	const workImg = getImage(projectsBlockData.image) as IGatsbyImageData;
+
+	return (
+		<Layout>
+			<div className="flex justify-center content-center flex-col">
+				<ContentBlock {...projectsBlockData} image={workImg} />
+				<Spacer visible />
+				<ProjectsQL />
 			</div>
-		</div>
-	</Layout>
-);
+		</Layout>
+	);
+};
 
-export default IndexPage;
+export default ProjectsPage;

@@ -44,7 +44,7 @@ const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
 					<p className="font-semibold text-2xl mb-1">
 						{experience.title}
 					</p>
-					<p className="font-semibold text-lg text-green mb-1">
+					<p className="font-semibold text-lg text-brand mb-1">
 						{experience.company}
 					</p>
 					<div className="leading-tight text-justify">

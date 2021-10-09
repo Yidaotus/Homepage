@@ -27,10 +27,19 @@ module.exports = {
         indigo: colors.indigo,
         red: colors.rose,
         yellow: colors.amber,
-        green: {
+        brand: {
+          DEFAULT: "#4D7C8A",
+          slight: "#F4F5F6",
+          light: "#BED4DA",
+          dark: "#1D2F34",
+          slightdark: "#1A2123"
+        },
+        brandDefault: {
           DEFAULT: "#73937E",
+          slight: "#F4F6F5",
           light: "#D1DCD5",
-          dark: "#2C3A31"
+          dark: "#2C3A31",
+          slightdark: "#1A2123"
         },
       },
     },

@@ -1,0 +1,23 @@
+[
+	{
+		"title": "YiLang",
+		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content.",
+		"image": "./images/editor_preview.png",
+		"repo": "https://github.com/Yidaotus/YiLangClient",
+		"link": "https://www.google.com"
+	},
+	{
+		"title": "Yi-8",
+		"description": "A very simple emulator for the CHIP-8 architecture.",
+		"image": "./images/yi8_preview.png",
+		"repo": "https://github.com/Yidaotus/Yi8",
+		"link": null
+	},
+	{
+		"title": "Homepage",
+		"description": "This very site.",
+		"image": "./images/homepage_preview.png",
+		"repo": null,
+		"link": null
+	}
+]

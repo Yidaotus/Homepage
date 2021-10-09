@@ -7,9 +7,20 @@ import { H1, H2 } from "../components/Typography";
 
 const PHOTO_QL_ENDPOINT = "allFile" as const;
 
+interface ImageProp {
+	full: IGatsbyImageData;
+	thumb: IGatsbyImageData;
+}
+
 const IndexPage = () => {
+	const [lightBoxImage, setLightBoxImage] =
+		React.useState<IGatsbyImageData | null>(null);
+
 	const photosGalleryQueryData = useStaticQuery<
-		GraphQLType<typeof PHOTO_QL_ENDPOINT, Array<IGatsbyImageData>>
+		GraphQLType<
+			typeof PHOTO_QL_ENDPOINT,
+			Array<{ childImageSharp: ImageProp }>
+		>
 	>(
 		graphql`
 			{
@@ -21,7 +32,11 @@ const IndexPage = () => {
 				) {
 					nodes {
 						childImageSharp {
-							gatsbyImageData(placeholder: BLURRED)
+							thumb: gatsbyImageData(
+								width: 780
+								placeholder: BLURRED
+							)
+							full: gatsbyImageData(layout: FULL_WIDTH)
 						}
 					}
 				}
@@ -45,6 +60,19 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<div className="flex flex-col space-y-16">
+				{lightBoxImage && (
+					<div
+						className="fixed w-full h-full top-0 left-0 flex items-center justify-center z-30 bg-black bg-opacity-80 overflow-hidden"
+						onClick={() => setLightBoxImage(null)}
+						role="none"
+					>
+						<img
+							src={getImage(lightBoxImage)?.images.fallback?.src}
+							className="m-auto h-[90%] w-auto object-contain ring-black ring-2 dark:ring-white"
+							alt="lightbox imagec"
+						/>
+					</div>
+				)}
 				<div className="sm:w-2/3">
 					<H1>Photography</H1>
 					<H2>A small gallery of recent photographs</H2>
@@ -59,16 +87,27 @@ const IndexPage = () => {
 				</div>
 				<div className="flex flex-row flex-wrap mx-">
 					{photoGalleryData.map((photoBookImage, index) => (
-						// eslint-disable-next-line react/no-array-index-key
-						<div key={index}>
+						<div
+							// eslint-disable-next-line react/no-array-index-key
+							key={index}
+							className="transform hover:scale-[1.01] transition-all"
+							role="none"
+							onClick={() =>
+								setLightBoxImage(
+									photoBookImage.childImageSharp.full
+								)
+							}
+						>
 							<GatsbyImage
-								className="object-none h-40 w-full mb-1 border shadow-sm dark:border-gray-600"
+								className="object-none h-40 w-full mb-1 shadow-sm rounded dark:ring-1 dark:ring-white dark:ring-opacity-10"
 								imgStyle={{
 									objectFit: "cover",
 									objectPosition: `${galleryPosition[index][0]}% ${galleryPosition[index][1]}% `,
 								}}
 								image={
-									getImage(photoBookImage) as IGatsbyImageData
+									getImage(
+										photoBookImage.childImageSharp.thumb
+									) as IGatsbyImageData
 								}
 								alt="Charicatur Waving"
 							/>

@@ -2,6 +2,7 @@ import "./MobileMenu.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import useDelayedRender from "use-delayed-render";
+import menuItems from "../menu.json";
 
 const MenuIcon = (props: JSX.IntrinsicElements["svg"]) => (
 	<svg
@@ -91,46 +92,23 @@ export default function MobileMenu() {
 						isMenuRendered && "menuRendered"
 					}`}
 				>
-					<li
-						className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-						style={{ transitionDelay: "150ms" }}
-					>
-						<Link to="/">
-							<a className="flex w-auto pb-4">Home</a>
-						</Link>
-					</li>
-					<li
-						className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-						style={{ transitionDelay: "175ms" }}
-					>
-						<Link to="/projects">
-							<a className="flex w-auto pb-4">Projects</a>
-						</Link>
-					</li>
-					<li
-						className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-						style={{ transitionDelay: "200ms" }}
-					>
-						<Link to="/about">
-							<a className="flex w-auto pb-4">About</a>
-						</Link>
-					</li>
-					<li
-						className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-						style={{ transitionDelay: "250ms" }}
-					>
-						<Link to="/photography">
-							<a className="flex w-auto pb-4">Photography</a>
-						</Link>
-					</li>
-					<li
-						className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-						style={{ transitionDelay: "300ms" }}
-					>
-						<Link to="/contact">
-							<a className="flex w-auto pb-4">Contact</a>
-						</Link>
-					</li>
+					{menuItems.map((menuItem, index) => {
+						const transitionDelay = 150 + index * 75;
+						return (
+							<li
+								className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold hover:text-brand dark:hover:text-brand-light"
+								style={{
+									transitionDelay: `${transitionDelay}ms`,
+								}}
+							>
+								<Link to={menuItem.link}>
+									<a className="flex w-auto pb-4">
+										{menuItem.name}
+									</a>
+								</Link>
+							</li>
+						);
+					})}
 				</ul>
 			)}
 		</>

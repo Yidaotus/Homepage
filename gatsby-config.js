@@ -49,6 +49,20 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
+                name: "content_blocks",
+                path: `./src/content/contentBlocks`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: "projects",
+                path: `./src/content/projects`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
                 name: `images`,
                 path: `./src/images`,
             },

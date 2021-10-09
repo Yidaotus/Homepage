@@ -16,17 +16,17 @@ export interface ISpotifyTrack {
 const SpotifyRecent: React.FC<{ tracks: Array<ISpotifyTrack> }> = ({
 	tracks,
 }) => (
-	<div className="space-y-4">
-		<ol>
+	<div>
+		<ol className="divide-y divide-solid divide-black dark:divide-white divide-opacity-10 space-y-1 sm:space-y-2">
 			{tracks.map(({ track }, index) => (
-				<li className="flex flex-row items-center mb-2 pb-2 px-1 border-b border-black dark:border-white border-opacity-20 dark:border-opacity-20">
+				<li className="flex flex-row items-center px-1 dark:border-opacity-20 pt-1 sm:pt-2">
 					<p className="font-bold text-gray-400 text-lg">
 						{index + 1}
 					</p>
 					<p className="ml-4 flex flex-col">
 						<a
 							href={track.uri}
-							className="hover:text-green text-md font-semibold"
+							className="hover:text-brand text-md font-semibold"
 						>
 							<span>{track.name}</span>
 						</a>

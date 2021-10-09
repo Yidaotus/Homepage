@@ -7,7 +7,7 @@
 }
 
 .menu-active {
-	@apply text-green border-b border-green;
+	@apply text-brand border-b border-brand;
 }
 
 .menu-container {

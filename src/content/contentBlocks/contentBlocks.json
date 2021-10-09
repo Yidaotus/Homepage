@@ -1,0 +1,34 @@
+[
+	{
+		"id": "index",
+		"title": "I'm Daniel",
+		"subtitle": "Software Developer / Musician / Language Enthusiast",
+		"content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
+		"image": "./images/char_head.png",
+		"reversed": true
+	},
+	{
+		"id": "projects",
+		"title": "Projects",
+		"subtitle": "Recent Projects I've been working on",
+		"content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
+		"image": "./images/char_creative.png",
+		"reversed": false
+	},
+	{
+		"id": "about",
+		"title": "About me",
+		"subtitle": "Software Developer / Musician / Language Enthusiast",
+		"content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
+		"image": "./images/char_wave.png",
+		"reversed": false
+	},
+	{
+		"id": "personal",
+		"title": "Personal",
+		"subtitle": "About my personal life",
+		"content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
+		"image": "./images/char_guitar.png",
+		"reversed": true
+	}
+]

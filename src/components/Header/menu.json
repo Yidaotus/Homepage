@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Home",
+		"link": "/"
+	},
+	{
+		"name": "Projects",
+		"link": "/projects"
+	},
+	{
+		"name": "About",
+		"link": "/about"
+	},
+	{
+		"name": "Photography",
+		"link": "/photography"
+	},
+	{
+		"name": "Contact",
+		"link": "/contact"
+	}
+]

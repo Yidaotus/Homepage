@@ -26,16 +26,16 @@ const Skills: React.FC<{ skills: Array<ISkillData> }> = ({ skills }) => (
 							.map(({ name, level }) => (
 								<li
 									key={name}
-									className="rounded-sm bg-gray-600 dark:bg-gray-300 px-3 w-min inline-block whitespace-nowrap mr-2 relative"
+									className="rounded-sm bg-brand-dark dark:bg-brand-slight px-3 w-min inline-block whitespace-nowrap mr-2 relative shadow dark:ring-1 dark:ring-gray-500"
 								>
 									{name}
 									<div
-										className="bg-green absolute left-0 right-0 bottom-0"
+										className="bg-brand-light dark:bg-brand-dark absolute left-0 right-0 bottom-0"
 										style={{
 											borderBottomLeftRadius: "10px",
 											borderBottomRightRadius:
 												level === 3 ? "10px" : "0px",
-											height: "2px",
+											height: "3px",
 											width: `${
 												Number(level) *
 												(100 / maxSkillLevel)
