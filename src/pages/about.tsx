@@ -29,11 +29,7 @@ const IndexPage = () => {
 					title
 					image {
 						childImageSharp {
-							gatsbyImageData(
-								width: 407
-								layout: FULL_WIDTH
-								placeholder: BLURRED
-							)
+							gatsbyImageData(width: 407, placeholder: BLURRED)
 						}
 					}
 				}

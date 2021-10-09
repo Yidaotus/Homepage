@@ -23,11 +23,7 @@ const ProjectsPage = () => {
 				title
 				image {
 					childImageSharp {
-						gatsbyImageData(
-							width: 305
-							layout: FULL_WIDTH
-							placeholder: BLURRED
-						)
+						gatsbyImageData(width: 305, placeholder: BLURRED)
 					}
 				}
 			}

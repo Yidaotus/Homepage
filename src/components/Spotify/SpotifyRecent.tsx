@@ -20,7 +20,7 @@ const SpotifyRecent: React.FC<{ tracks: Array<ISpotifyTrack> }> = ({
 		<ol className="divide-y divide-solid divide-black dark:divide-white divide-opacity-10 space-y-1 sm:space-y-2">
 			{tracks.map(({ track }, index) => (
 				<li className="flex flex-row items-center px-1 dark:border-opacity-20 pt-1 sm:pt-2">
-					<p className="font-bold text-gray-400 text-lg">
+					<p className="font-bold text-gray-400 text-lg lining-nums">
 						{index + 1}
 					</p>
 					<p className="ml-4 flex flex-col">

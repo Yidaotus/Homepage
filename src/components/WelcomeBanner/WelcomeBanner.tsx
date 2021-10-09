@@ -2,15 +2,17 @@ import * as React from "react";
 import TextTransition, { presets } from "react-text-transition";
 
 const WELCOMES = [
-	"Wilkommen",
 	"Welcome",
 	"ようこそ",
-	"欢迎",
-	"Welcom",
-	"歡迎",
+	"Bienvenue",
+	"어서 오세요",
 	"Välkommen",
-	"환영",
-	"Добро пожаловать",
+	"欢迎",
+	"Wilkommen",
+	"歡迎光臨",
+	"Tervetuloa",
+	"歡迎",
+	"Velkommen",
 ];
 
 const WelcomeBanner = () => {
@@ -32,13 +34,15 @@ const WelcomeBanner = () => {
 	}, []);
 
 	return (
-		<div className="mt-3 sm:mt-0 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold flex justify-between items-center">
+		<div className="font-bold flex flex-row justify-end sm:justify-center items-center sm:truncate sm:pb-1 lg:pb-2">
 			<TextTransition
-				className="w-2/3 m-auto text-brand"
+				className=" text-brand text-3xl md:text-5xl lg:text-6xl sm:mr-4 sm:ml-2 m-auto"
 				text={WELCOMES[index % WELCOMES.length]}
-				springConfig={presets.gentle}
+				springConfig={presets.stiff}
 			/>
-			<div className="w-1/3 font-semibold">to my digital place</div>
+			<div className="font-semibold w-[130px] sm:w-auto text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+				to my digital place
+			</div>
 		</div>
 	);
 };

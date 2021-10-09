@@ -52,14 +52,18 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<div className="flex flex-col">
-				<WelcomeBanner />
-				<Spacer visible />
-				<ContentBlock {...indexBlockData} image={charicaturImage} />
-				<Spacer />
-				<div>
-					<H1>Latest Posts</H1>
-					<H2>Latest posts from my Medium Blog</H2>
-					<MediumFeedQL />
+				<div className="absolute w-full left-0">
+					<WelcomeBanner />
+				</div>
+				<div className="flex flex-col mt-24 sm:mt-8 md:mt-11 lg:mt-14">
+					<Spacer visible />
+					<ContentBlock {...indexBlockData} image={charicaturImage} />
+					<Spacer />
+					<div>
+						<H1>Latest Posts</H1>
+						<H2>Latest posts from my Medium Blog</H2>
+						<MediumFeedQL />
+					</div>
 				</div>
 			</div>
 		</Layout>

@@ -21,10 +21,11 @@ const MediumFeed: React.FC<{ feed: Array<IFeedData> }> = ({ feed }) => (
 				<div className="flex flex-col sm:flex-row sm:justify-between sm:mt-1">
 					<p className="text-brand">{feedItem.isoDate}</p>
 					<ul className="text-white dark:text-black font-medium flex flex-row text-sm flex-wrap self-end sm:self-baseline">
-						{feedItem.categories.map((category) => (
+						{feedItem.categories.map((category, index) => (
 							<li
 								key={category}
-								className="rounded-sm bg-brand-dark dark:bg-brand-slight px-3 w-min inline-block whitespace-nowrap mr-2 relative shadow dark:ring-1 dark:ring-gray-500 mt-2"
+								className={`${index === 0 && "ml-auto"} 
+								 rounded-sm bg-brand-dark dark:bg-brand-slight px-3 w-min inline-block whitespace-nowrap mr-2 relative shadow dark:ring-1 dark:ring-gray-500 mt-2`}
 							>
 								#{category}
 							</li>

@@ -36,7 +36,10 @@ const IndexPage = () => {
 								width: 780
 								placeholder: BLURRED
 							)
-							full: gatsbyImageData(layout: FULL_WIDTH)
+							full: gatsbyImageData(
+								layout: FULL_WIDTH
+								quality: 100
+							)
 						}
 					}
 				}
@@ -60,19 +63,25 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<div className="flex flex-col space-y-16">
-				{lightBoxImage && (
-					<div
-						className="fixed w-full h-full top-0 left-0 flex items-center justify-center z-30 bg-black bg-opacity-80 overflow-hidden"
-						onClick={() => setLightBoxImage(null)}
-						role="none"
-					>
-						<img
-							src={getImage(lightBoxImage)?.images.fallback?.src}
-							className="m-auto h-[90%] w-auto object-contain ring-black ring-2 dark:ring-white"
-							alt="lightbox imagec"
-						/>
+				<div
+					className={`fixed z-30 bg-black bg-opacity-80 w-full h-full top-0 left-0
+								${lightBoxImage ? "block" : "hidden"}`}
+					onClick={() => setLightBoxImage(null)}
+					role="none"
+				>
+					<div className="flex items-center justify-center h-full w-full">
+						{lightBoxImage && (
+							<GatsbyImage
+								image={
+									getImage(lightBoxImage) as IGatsbyImageData
+								}
+								className="m-auto w-full max-h-[90%] max-w-[90%] dark:ring-white"
+								imgStyle={{ objectFit: "contain" }}
+								alt="lightbox imagec"
+							/>
+						)}
 					</div>
-				)}
+				</div>
 				<div className="sm:w-2/3">
 					<H1>Photography</H1>
 					<H2>A small gallery of recent photographs</H2>
