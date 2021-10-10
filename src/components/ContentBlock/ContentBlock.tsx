@@ -6,7 +6,7 @@ export interface IContentBlock {
 	title: string;
 	subtitle: string;
 	content: string;
-	image: IGatsbyImageData;
+	image?: IGatsbyImageData;
 	reversed?: boolean;
 }
 
@@ -34,7 +34,11 @@ const ContentBlock: React.FC<IContentBlock> = ({
 		>
 			<H1>{title}</H1>
 			<H2>{subtitle}</H2>
-			<p className="text-gray-600 dark:text-gray-400">{content}</p>
+			<p
+				className="text-gray-600 dark:text-gray-400 list-inside list-disc"
+				// eslint-disable-next-line react/no-danger
+				dangerouslySetInnerHTML={{ __html: content }}
+			/>
 		</div>
 	</div>
 );

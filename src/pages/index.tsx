@@ -1,10 +1,9 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import { H1, H2 } from "../components/Typography";
 import MediumFeedQL from "../components/MediumFeed/MediumFeedQL";
-import SpotifyRecentQL from "../components/Spotify/SpotifyRecentQL";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
@@ -14,16 +13,6 @@ import Spacer from "../components/Spacer";
 
 const INDEXBLOCK_QL_ENDPOINT = "contentBlocksJson" as const;
 const IndexPage = () => {
-	const [index, setIndex] = React.useState(0);
-
-	React.useEffect(() => {
-		const intervalId = setInterval(
-			() => setIndex((current_index) => current_index + 1),
-			Math.random() * 7000 + 3000
-		);
-		return () => clearTimeout(intervalId);
-	}, []);
-
 	const indexBlockQuery = useStaticQuery<
 		GraphQLDataType<typeof INDEXBLOCK_QL_ENDPOINT, IContentBlock>
 	>(graphql`
@@ -47,7 +36,9 @@ const IndexPage = () => {
 		}
 	`);
 	const indexBlockData = indexBlockQuery[INDEXBLOCK_QL_ENDPOINT];
-	const charicaturImage = getImage(indexBlockData.image) as IGatsbyImageData;
+	const charicaturImage = indexBlockData?.image
+		? getImage(indexBlockData.image)
+		: undefined;
 
 	return (
 		<Layout>

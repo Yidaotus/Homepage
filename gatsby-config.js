@@ -70,6 +70,7 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
+        `gatsby-transformer-remark`,
         {
             resolve: `gatsby-source-rss-feed`,
             options: {

@@ -1,11 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import {
+	GatsbyImage,
+	getImage,
+	IGatsbyImageData,
+	ImageDataLike,
+} from "gatsby-plugin-image";
 import * as React from "react";
-import { GraphQLType } from "../@types/ql";
+import ContentBlock, {
+	IContentBlock,
+} from "../components/ContentBlock/ContentBlock";
 import Layout from "../components/Layout";
-import { H1, H2 } from "../components/Typography";
-
-const PHOTO_QL_ENDPOINT = "allFile" as const;
 
 interface ImageProp {
 	full: IGatsbyImageData;
@@ -13,40 +17,67 @@ interface ImageProp {
 }
 
 const IndexPage = () => {
-	const [lightBoxImage, setLightBoxImage] =
-		React.useState<IGatsbyImageData | null>(null);
-
-	const photosGalleryQueryData = useStaticQuery<
-		GraphQLType<
-			typeof PHOTO_QL_ENDPOINT,
-			Array<{ childImageSharp: ImageProp }>
-		>
-	>(
-		graphql`
-			{
-				allFile(
-					sort: { fields: relativePath, order: ASC }
-					filter: {
-						sourceInstanceName: { eq: "photography_gallery" }
+	const photoBlockQuery = useStaticQuery<{
+		contentBlocksJson: IContentBlock & {
+			md: {
+				childMarkdownRemark: {
+					id: string;
+					html: string;
+				};
+			};
+		};
+		allFile: {
+			nodes: Array<{
+				childImageSharp: ImageProp;
+			}>;
+		};
+	}>(graphql`
+		{
+			contentBlocksJson(id: { eq: "photography" }) {
+				id
+				reversed
+				subtitle
+				md {
+					childMarkdownRemark {
+						id
+						html
 					}
-				) {
-					nodes {
-						childImageSharp {
-							thumb: gatsbyImageData(
-								width: 780
-								placeholder: BLURRED
-							)
-							full: gatsbyImageData(
-								layout: FULL_WIDTH
-								quality: 100
-							)
-						}
+				}
+				content
+				title
+				image {
+					childImageSharp {
+						gatsbyImageData(
+							width: 305
+							layout: CONSTRAINED
+							placeholder: BLURRED
+						)
 					}
 				}
 			}
-		`
-	);
-	const photoGalleryData = photosGalleryQueryData[PHOTO_QL_ENDPOINT].nodes;
+			allFile(
+				sort: { fields: relativePath, order: ASC }
+				filter: { sourceInstanceName: { eq: "photography_gallery" } }
+			) {
+				nodes {
+					childImageSharp {
+						thumb: gatsbyImageData(width: 780, placeholder: BLURRED)
+						full: gatsbyImageData(layout: FULL_WIDTH, quality: 100)
+					}
+				}
+			}
+		}
+	`);
+	console.log(photoBlockQuery);
+	const photoBlockData = photoBlockQuery.contentBlocksJson;
+	const photoImage = photoBlockData?.image
+		? (getImage(photoBlockData.image) as IGatsbyImageData)
+		: undefined;
+
+	const [lightBoxImage, setLightBoxImage] =
+		React.useState<ImageDataLike | null>(null);
+
+	const photoGalleryData = photoBlockQuery.allFile.nodes;
 
 	const galleryPosition = [
 		[0, 20],
@@ -62,7 +93,7 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<div className="flex flex-col space-y-16">
+			<div className="flex flex-col">
 				<div
 					className={`fixed z-30 bg-black bg-opacity-80 w-full h-full top-0 left-0
 								${lightBoxImage ? "block" : "hidden"}`}
@@ -82,18 +113,11 @@ const IndexPage = () => {
 						)}
 					</div>
 				</div>
-				<div className="sm:w-2/3">
-					<H1>Photography</H1>
-					<H2>A small gallery of recent photographs</H2>
-					<p className="text-gray-600 dark:text-gray-400">
-						My Equipment:
-					</p>
-					<ul className="list-disc list-inside text-gray-600 dark:text-gray-400 ml-1 mt-2 space-y-2">
-						<li>Sony Alpha 6400</li>
-						<li>Sony 18-134mm f/3.5-5.6</li>
-						<li>Cullmann Alpha 2800</li>
-					</ul>
-				</div>
+				<ContentBlock
+					{...photoBlockData}
+					content={photoBlockData.md.childMarkdownRemark.html}
+					image={photoImage}
+				/>
 				<div className="flex flex-row flex-wrap mx-">
 					{photoGalleryData.map((photoBookImage, index) => (
 						<div
