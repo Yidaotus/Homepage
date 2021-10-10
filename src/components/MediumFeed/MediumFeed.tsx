@@ -12,8 +12,8 @@ const MediumFeed: React.FC<{ feed: Array<IFeedData> }> = ({ feed }) => (
 	<div className="flex flex-col">
 		{feed.map((feedItem) => (
 			<div
-				className="mb-4 rounded-sm ring-brand ring-opacity-10 ring-1 dark:ring-brand-light dark:ring-1 dark:ring-opacity-10 px-4 py-2 sm:py-3 border-black dark:border-white 
-						   border-opacity-20 dark:border-opacity-20 flex flex-col content-center transform hover:scale-[1.01] transition-all"
+				className="mb-4 border-b py-2 sm:py-3 border-black dark:border-white 
+						   border-opacity-10 dark:border-opacity-20 flex flex-col content-center transform hover:scale-[1.01] transition-all"
 			>
 				<a className="text-lg  hover:text-brand" href={feedItem.link}>
 					{feedItem.title}
