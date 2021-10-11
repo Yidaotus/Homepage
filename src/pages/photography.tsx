@@ -19,7 +19,7 @@ interface ImageProp {
 const IndexPage = () => {
 	const photoBlockQuery = useStaticQuery<{
 		contentBlocksJson: IContentBlock & {
-			md: {
+			content: {
 				childMarkdownRemark: {
 					id: string;
 					html: string;
@@ -36,15 +36,12 @@ const IndexPage = () => {
 			contentBlocksJson(id: { eq: "photography" }) {
 				id
 				reversed
-				subtitle
-				md {
+				content {
 					childMarkdownRemark {
 						id
 						html
 					}
 				}
-				content
-				title
 				image {
 					childImageSharp {
 						gatsbyImageData(
@@ -68,7 +65,6 @@ const IndexPage = () => {
 			}
 		}
 	`);
-	console.log(photoBlockQuery);
 	const photoBlockData = photoBlockQuery.contentBlocksJson;
 	const photoImage = photoBlockData?.image
 		? (getImage(photoBlockData.image) as IGatsbyImageData)
@@ -115,7 +111,7 @@ const IndexPage = () => {
 				</div>
 				<ContentBlock
 					{...photoBlockData}
-					content={photoBlockData.md.childMarkdownRemark.html}
+					content={photoBlockData.content.childMarkdownRemark.html}
 					image={photoImage}
 				/>
 				<div className="flex flex-row flex-wrap mx-">

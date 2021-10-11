@@ -7,22 +7,24 @@ import MediumFeedQL from "../components/MediumFeed/MediumFeedQL";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
-import { GraphQLDataType } from "../@types/ql";
 import WelcomeBanner from "../components/WelcomeBanner/WelcomeBanner";
 import Spacer from "../components/Spacer";
 
-const INDEXBLOCK_QL_ENDPOINT = "contentBlocksJson" as const;
 const IndexPage = () => {
-	const indexBlockQuery = useStaticQuery<
-		GraphQLDataType<typeof INDEXBLOCK_QL_ENDPOINT, IContentBlock>
-	>(graphql`
+	const indexBlockQuery = useStaticQuery<{
+		contentBlocksJson: Omit<IContentBlock, "content"> & {
+			content: { childMarkdownRemark: { html: string } };
+		};
+	}>(graphql`
 		{
 			contentBlocksJson(id: { eq: "index" }) {
-				id
 				reversed
-				subtitle
-				content
-				title
+				content {
+					childMarkdownRemark {
+						id
+						html
+					}
+				}
 				image {
 					childImageSharp {
 						gatsbyImageData(
@@ -35,8 +37,8 @@ const IndexPage = () => {
 			}
 		}
 	`);
-	const indexBlockData = indexBlockQuery[INDEXBLOCK_QL_ENDPOINT];
-	const charicaturImage = indexBlockData?.image
+	const indexBlockData = indexBlockQuery.contentBlocksJson;
+	const charicaturImage = indexBlockData.image
 		? getImage(indexBlockData.image)
 		: undefined;
 
@@ -48,7 +50,13 @@ const IndexPage = () => {
 				</div>
 				<div className="flex flex-col mt-24 sm:mt-8 md:mt-11 lg:mt-14">
 					<Spacer visible />
-					<ContentBlock {...indexBlockData} image={charicaturImage} />
+					<ContentBlock
+						content={
+							indexBlockData.content.childMarkdownRemark.html
+						}
+						image={charicaturImage}
+						reversed={indexBlockData.reversed}
+					/>
 					<Spacer />
 					<div>
 						<H1>Latest Posts</H1>

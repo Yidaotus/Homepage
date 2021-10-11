@@ -1,39 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-	font-display: swap;
-	font-family: "Poppins Light";
-	font-style: normal;
-	src: local("Poppins Light"), local("Poppins-Light"),
-		url("../fonts/Poppins-Light.ttf") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "Poppins Regular";
-	font-style: normal;
-	src: local("Poppins Regular"), local("Poppins-Regular"),
-		url("../fonts/Poppins-Regular.ttf") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "Poppins Bold";
-	font-style: normal;
-	src: local("Poppins Bold"), local("Poppins-Bold"),
-		url("../fonts/Poppins-Bold.ttf") format("woff2");
-}
-
-@font-face {
-	font-display: swap;
-	font-family: "Poppins SemiBold";
-	font-style: normal;
-	src: local("Poppins SemiBold"), local("Poppins-SemiBold"),
-		url("../fonts/Poppins-SemiBold.ttf") format("woff2");
-}
-
+/* purgecss start ignore */
 /* Markdown Styles */
 /* Global */
 .markdown {
@@ -53,14 +18,10 @@
 }
 
 /* Headers */
-.markdown h1 {
+.markdown h1,
+.markdown h2 {
 	@apply text-xl my-6 font-semibold;
 }
-
-.markdown h2 {
-	@apply text-lg my-6 font-semibold;
-}
-
 .markdown h3,
 .markdown h4,
 .markdown h5,
@@ -69,20 +30,15 @@
 }
 
 @screen sm {
-	.markdown h1 {
-		@apply text-4xl;
-	}
-
+	.markdown h1,
 	.markdown h2 {
 		@apply text-2xl;
 	}
-	.markdown h3 {
-		@apply text-xl;
-	}
+	.markdown h3,
 	.markdown h4,
 	.markdown h5,
 	.markdown h6 {
-		@apply text-lg;
+		@apply text-xl;
 	}
 }
 
@@ -139,3 +95,4 @@
 .markdown :not(pre) > code.language-text {
 	white-space: pre-line;
 }
+/* purgecss end ignore */

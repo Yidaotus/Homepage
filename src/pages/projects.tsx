@@ -1,7 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
-import { GraphQLDataType } from "../@types/ql";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
@@ -9,18 +8,21 @@ import Layout from "../components/Layout";
 import ProjectsQL from "../components/Project/ProjectsQL";
 import Spacer from "../components/Spacer";
 
-const INDEXBLOCK_QL_ENDPOINT = "contentBlocksJson" as const;
 const ProjectsPage = () => {
-	const projectsBlockQuery = useStaticQuery<
-		GraphQLDataType<typeof INDEXBLOCK_QL_ENDPOINT, IContentBlock>
-	>(graphql`
+	const projectsBlockQuery = useStaticQuery<{
+		contentBlocksJson: Omit<IContentBlock, "content"> & {
+			content: { childMarkdownRemark: { html: string } };
+		};
+	}>(graphql`
 		{
 			contentBlocksJson(id: { eq: "projects" }) {
-				id
 				reversed
-				subtitle
-				content
-				title
+				content {
+					childMarkdownRemark {
+						id
+						html
+					}
+				}
 				image {
 					childImageSharp {
 						gatsbyImageData(width: 305, placeholder: BLURRED)
@@ -29,13 +31,19 @@ const ProjectsPage = () => {
 			}
 		}
 	`);
-	const projectsBlockData = projectsBlockQuery[INDEXBLOCK_QL_ENDPOINT];
-	const workImg = getImage(projectsBlockData.image) as IGatsbyImageData;
+	const projectsBlockData = projectsBlockQuery.contentBlocksJson;
+	const workImg = projectsBlockData.image
+		? getImage(projectsBlockData.image)
+		: undefined;
 
 	return (
 		<Layout>
 			<div className="flex justify-center content-center flex-col">
-				<ContentBlock {...projectsBlockData} image={workImg} />
+				<ContentBlock
+					content={projectsBlockData.content.childMarkdownRemark.html}
+					image={workImg}
+					reversed={projectsBlockData.reversed}
+				/>
 				<Spacer visible />
 				<ProjectsQL />
 			</div>

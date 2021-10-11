@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import ExperienceQL from "../components/Experience/ExperienceQL";
 import Layout from "../components/Layout";
 import SkillsQL from "../components/Skills/SkillsQL";
@@ -9,42 +9,60 @@ import SpotifyRecentQL from "../components/Spotify/SpotifyRecentQL";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
-import { GraphQLType } from "../@types/ql";
 import Spacer from "../components/Spacer";
 
-const ABOUTBLOCK_QL_ENDPOINT = "allContentBlocksJson" as const;
 const IndexPage = () => {
-	const aboutBlockQuery = useStaticQuery<
-		GraphQLType<typeof ABOUTBLOCK_QL_ENDPOINT, Array<IContentBlock>>
-	>(graphql`
+	const aboutBlockQuery = useStaticQuery<{
+		allContentBlocksJson: {
+			nodes: Array<
+				Omit<IContentBlock, "content"> & {
+					content: { childMarkdownRemark: { html: string } };
+				}
+			>;
+		};
+	}>(graphql`
 		{
 			allContentBlocksJson(
 				filter: { id: { in: ["about", "personal"] } }
 			) {
 				nodes {
-					id
 					reversed
-					subtitle
-					content
-					title
+					content {
+						childMarkdownRemark {
+							id
+							html
+						}
+					}
 					image {
 						childImageSharp {
-							gatsbyImageData(width: 407, placeholder: BLURRED)
+							gatsbyImageData(
+								width: 305
+								layout: CONSTRAINED
+								placeholder: BLURRED
+							)
 						}
 					}
 				}
 			}
 		}
 	`);
-	const indexBlockData = aboutBlockQuery[ABOUTBLOCK_QL_ENDPOINT].nodes;
+	const indexBlockData = aboutBlockQuery.allContentBlocksJson.nodes;
 
-	const avatarImg = getImage(indexBlockData[0].image) as IGatsbyImageData;
-	const guitarImg = getImage(indexBlockData[1].image) as IGatsbyImageData;
+	const avatarImg = indexBlockData[0]?.image
+		? getImage(indexBlockData[0].image)
+		: undefined;
+	const guitarImg = indexBlockData[1]?.image
+		? getImage(indexBlockData[1].image)
+		: undefined;
 
 	return (
 		<Layout>
 			<div className="flex justify-center content-center flex-col relative">
-				<ContentBlock {...indexBlockData[0]} image={avatarImg} />
+				<ContentBlock
+					content={indexBlockData[0].content.childMarkdownRemark.html}
+					image={avatarImg}
+					reversed={indexBlockData[0].reversed}
+				/>
 				<Spacer visible />
 				<div className="mb-16">
 					<H1>Experience</H1>
@@ -57,7 +75,11 @@ const IndexPage = () => {
 					<SkillsQL />
 				</div>
 				<Spacer />
-				<ContentBlock {...indexBlockData[1]} image={guitarImg} />
+				<ContentBlock
+					content={indexBlockData[1].content.childMarkdownRemark.html}
+					image={guitarImg}
+					reversed={indexBlockData[1].reversed}
+				/>
 				<Spacer visible />
 				<div className="mb-16">
 					<H1>Recent Hits</H1>

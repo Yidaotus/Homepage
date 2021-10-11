@@ -1,47 +1,32 @@
 [
 	{
 		"id": "index",
-		"title": "I'm Daniel",
-		"subtitle": "👨‍💻 Software Developer 🎸 Musician 💬 Language Enthusiast",
-		"content": " - ",
 		"image": "./images/char_head.png",
-		"md": "./mds/test.md",
+		"content": "./mds/index.md",
 		"reversed": true
 	},
 	{
 		"id": "projects",
-		"title": "Projects",
-		"subtitle": "Recent Projects I've been working on",
-		"content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum",
 		"image": "./images/char_creative.png",
-		"md": "./mds/test.md",
+		"content": "./mds/projects.md",
 		"reversed": false
 	},
 	{
 		"id": "about",
-		"title": "About me",
-		"subtitle": "My working experience and about me personal.",
-		"content": "",
 		"image": "./images/char_wave.png",
-		"md": "./mds/test.md",
+		"content": "./mds/about.md",
 		"reversed": false
 	},
 	{
 		"id": "personal",
-		"title": "Personal",
-		"subtitle": "About me personal",
-		"content": "Just a quick rundown about me personal.",
 		"image": "./images/char_guitar.png",
-		"md": "./mds/test.md",
+		"content": "./mds/personal.md",
 		"reversed": true
 	},
 	{
 		"id": "photography",
-		"title": "Photography",
-		"subtitle": "Have a look at photos I took",
-		"content": "A small gallery of recent photos I took. I mostly stick to simple stuff, with high interest in landscape and street photography. Equipment I use: <ul class='list-inside list-disc' ><li>Sony Alpha 6400</li><li>Sony 18-134mm f/3.5-5.6</li><li>Cullmann Alpha 2800</li></ul>",
 		"image": "./images/char_guitar.png",
-		"md": "./mds/test.md",
+		"content": "./mds/photography.md",
 		"reversed": true
 	}
 ]

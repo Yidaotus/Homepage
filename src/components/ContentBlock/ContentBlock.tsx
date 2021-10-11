@@ -1,18 +1,13 @@
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
-import { H1, H2 } from "../Typography";
 
 export interface IContentBlock {
-	title: string;
-	subtitle: string;
 	content: string;
 	image?: IGatsbyImageData;
 	reversed?: boolean;
 }
 
 const ContentBlock: React.FC<IContentBlock> = ({
-	title,
-	subtitle,
 	content,
 	image,
 	reversed = false,
@@ -32,10 +27,8 @@ const ContentBlock: React.FC<IContentBlock> = ({
 				image && !reversed && "sm:ml-8"
 			} `}
 		>
-			<H1>{title}</H1>
-			<H2>{subtitle}</H2>
-			<p
-				className="text-gray-600 dark:text-gray-400 list-inside list-disc"
+			<div
+				className="markdown"
 				// eslint-disable-next-line react/no-danger
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
