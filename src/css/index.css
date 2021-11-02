@@ -37,7 +37,7 @@
 /* Markdown Styles */
 /* Global */
 .markdown {
-	@apply leading-relaxed text-sm;
+	@apply leading-relaxed text-base;
 }
 
 @screen sm {
@@ -86,18 +86,17 @@
 	}
 }
 
-/* Links */
 .markdown a {
 	@apply text-blue-600;
 }
 .markdown a:hover {
 	@apply underline;
 }
-/* Paragraph */
+
 .markdown p {
 	@apply mb-4;
 }
-/* Lists */
+
 .markdown ul,
 .markdown ol {
 	@apply mb-4 ml-8;
@@ -113,14 +112,14 @@
 .markdown ul {
 	@apply list-disc;
 }
-/* Blockquotes */
+
 .markdown blockquote {
 	@apply p-2 mx-6 bg-gray-100 mb-4 border-l-4 border-gray-400 italic;
 }
 .markdown blockquote > p {
 	@apply mb-0;
 }
-/* Tables */
+
 .markdown td,
 .markdown th {
 	@apply px-2 py-1 border border-gray-400;
@@ -130,12 +129,4 @@
 }
 .markdown table {
 	@apply mb-6;
-}
-
-/* Wrap any inline highlights `that are really long`, but don't modify
-   the setting for codeblocks (inside ```), which are rendered in as:
-   <pre><code>...
-*/
-.markdown :not(pre) > code.language-text {
-	white-space: pre-line;
 }

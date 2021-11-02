@@ -54,7 +54,7 @@ const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
 								experience.endDate
 							)}
 						</p>
-						<ul className="list-disc list-inside text-gray-600 dark:text-gray-400 sm:pl-2">
+						<ul className="list-disc list-outside text-gray-600 dark:text-gray-400 pl-4 mt-2">
 							{experience.activities.map((activity) => (
 								<li key={activity}>{activity}</li>
 							))}

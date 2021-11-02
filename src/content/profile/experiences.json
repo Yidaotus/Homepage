@@ -5,8 +5,7 @@
 		"startDate": "2021-08-01",
 		"endDate": null,
 		"activities": [
-			"Salesforce technical consulting",
-			"Lorem Ipsum"
+			"Salesforce technical consulting"
 		]
 	},
 	{
@@ -16,7 +15,7 @@
 		"endDate": null,
 		"activities": [
 			"Scrum master",
-			"Salesforce LWC/LWR development",
+			"Salesforce LWC - LWR development",
 			"Fullstack development: React.js / mongoDB / Redux"
 		]
 	},
@@ -30,6 +29,7 @@
 			"Salesforce administration",
 			"Salesforce development in APEX / Visualforce ",
 			"Linux administration",
+			"Introduce and adopt Typescript",
 			"Guide and instruct interns",
 			"Workshops about agile development",
 			"Version management with GIT"

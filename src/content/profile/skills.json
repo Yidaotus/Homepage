@@ -40,7 +40,15 @@
 				"level": 3
 			},
 			{
-				"name": "Lightning Web Components",
+				"name": "Experience Cloud",
+				"level": 2
+			},
+			{
+				"name": "LWC",
+				"level": 2
+			},
+			{
+				"name": "LWR",
 				"level": 2
 			},
 			{
