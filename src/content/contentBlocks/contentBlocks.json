@@ -19,7 +19,6 @@
 	},
 	{
 		"id": "personal",
-		"image": "./images/char_guitar.png",
 		"content": "./mds/personal.md",
 		"reversed": true
 	},
@@ -28,5 +27,11 @@
 		"image": "./images/char_guitar.png",
 		"content": "./mds/photography.md",
 		"reversed": true
+	},
+	{
+		"id": "contact",
+		"image": "./images/char_nihao.png",
+		"content": "./mds/contact.md",
+		"reversed": false
 	}
 ]

@@ -15,7 +15,7 @@ const ProjectsPage = () => {
 		};
 	}>(graphql`
 		{
-			contentBlocksJson(id: { eq: "projects" }) {
+			contentBlocksJson(jsonId: { eq: "projects" }) {
 				reversed
 				content {
 					childMarkdownRemark {

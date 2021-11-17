@@ -1,8 +1,8 @@
 import "./MobileMenu.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
-import useDelayedRender from "use-delayed-render";
 import menuItems from "../menu.json";
+import useDelayedRender from "../../../helper/useDelayedRenderer";
 
 const MenuIcon = (props: JSX.IntrinsicElements["svg"]) => (
 	<svg

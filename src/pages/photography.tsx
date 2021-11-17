@@ -33,7 +33,7 @@ const IndexPage = () => {
 		};
 	}>(graphql`
 		{
-			contentBlocksJson(id: { eq: "photography" }) {
+			contentBlocksJson(jsonId: { eq: "photography" }) {
 				id
 				reversed
 				content {

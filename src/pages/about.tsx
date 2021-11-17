@@ -11,7 +11,11 @@ import ContentBlock, {
 } from "../components/ContentBlock/ContentBlock";
 import Spacer from "../components/Spacer";
 
+type CardSides = "personal" | "professional";
+
 const IndexPage = () => {
+	const [visibleCardSide, setVisibleCardSide] =
+		React.useState<CardSides>("personal");
 	const aboutBlockQuery = useStaticQuery<{
 		allContentBlocksJson: {
 			nodes: Array<
@@ -23,7 +27,7 @@ const IndexPage = () => {
 	}>(graphql`
 		{
 			allContentBlocksJson(
-				filter: { id: { in: ["about", "personal"] } }
+				filter: { jsonId: { in: ["about", "personal"] } }
 			) {
 				nodes {
 					reversed
@@ -64,30 +68,83 @@ const IndexPage = () => {
 					reversed={indexBlockData[0].reversed}
 				/>
 				<Spacer visible />
-				<div className="mb-16">
-					<H1>Experience</H1>
-					<H2>My working experience</H2>
-					<ExperienceQL />
+				<div className="flex sm:justify-center justify-between items-center">
+					<button
+						// activeClassName="font-semibold text-gray-800 dark:text-gray-200"
+						className=" hover:bg-brand-light dark:hover:bg-brand-dark transition-all p-1 sm:px-3 sm:py-2 rounded"
+						type="button"
+						onClick={() => setVisibleCardSide("professional")}
+					>
+						<span
+							className={`${
+								visibleCardSide === "professional" &&
+								"font-semibold text-gray-800 dark:text-gray-200 underline"
+							} text-4xl text-black dark:text-white`}
+						>
+							Professional
+						</span>
+					</button>
+					<span className="font-normal text-4xl text-black dark:text-white rounded-lg mx-4">
+						|
+					</span>
+					<button
+						// activeClassName="font-semibold text-gray-800 dark:text-gray-200"
+						className=" hover:bg-brand-light dark:hover:bg-brand-dark transition-all p-1 sm:px-3 sm:py-2 rounded"
+						type="button"
+						onClick={() => setVisibleCardSide("personal")}
+					>
+						<span
+							className={`${
+								visibleCardSide === "personal" &&
+								"font-semibold text-gray-800 dark:text-gray-200 underline"
+							} text-4xl text-black dark:text-white`}
+						>
+							Personal
+						</span>
+					</button>
 				</div>
-				<div className="mb-16">
-					<H1>Skills</H1>
-					<H2>Skills I have</H2>
-					<SkillsQL />
-				</div>
-				<Spacer />
-				<ContentBlock
-					content={indexBlockData[1].content.childMarkdownRemark.html}
-					image={guitarImg}
-					reversed={indexBlockData[1].reversed}
-				/>
 				<Spacer visible />
-				<div className="mb-16">
-					<H1>Recent Hits</H1>
-					<H2>
-						Music is a key element of my life. Here is what
-						I&apos;ve been listening to recently.
-					</H2>
-					<SpotifyRecentQL />
+				<div
+					className={
+						visibleCardSide === "professional"
+							? "flip-in-ver-right block"
+							: "hidden"
+					}
+				>
+					<div className="mb-16">
+						<H1>Experience</H1>
+						<H2>My working experience</H2>
+						<ExperienceQL />
+					</div>
+					<div className="mb-16">
+						<H1>Skills</H1>
+						<H2>Skills I have</H2>
+						<SkillsQL />
+					</div>
+				</div>
+				<div
+					className={
+						visibleCardSide === "personal"
+							? "flip-in-ver-right block"
+							: "hidden"
+					}
+				>
+					<ContentBlock
+						content={
+							indexBlockData[1].content.childMarkdownRemark.html
+						}
+						image={guitarImg}
+						reversed={indexBlockData[1].reversed}
+					/>
+					<Spacer visible />
+					<div className="mb-16">
+						<H1>Recent Hits</H1>
+						<H2>
+							Music is a key element of my life. Here is what
+							I&apos;ve been listening to recently.
+						</H2>
+						<SpotifyRecentQL />
+					</div>
 				</div>
 			</div>
 		</Layout>

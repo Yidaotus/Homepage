@@ -17,7 +17,7 @@ const IndexPage = () => {
 		};
 	}>(graphql`
 		{
-			contentBlocksJson(id: { eq: "index" }) {
+			contentBlocksJson(jsonId: { eq: "index" }) {
 				reversed
 				content {
 					childMarkdownRemark {

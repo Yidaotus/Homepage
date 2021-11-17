@@ -1,4 +1,3 @@
 # I'm Daniel
-## 👨‍💻 Software Developer  🎸 Musician  💬 Language Enthusiast  
 
-This is my website, welcome! Feel free to clone me!
+28 years old living and working in Düsseldorf as a FullStack Software Developer.  
