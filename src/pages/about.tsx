@@ -79,12 +79,12 @@ const IndexPage = () => {
 							className={`${
 								visibleCardSide === "professional" &&
 								"font-semibold text-gray-800 dark:text-gray-200 underline"
-							} text-4xl text-black dark:text-white`}
+							} text-2xl sm:text-4xl text-black dark:text-white`}
 						>
 							Professional
 						</span>
 					</button>
-					<span className="font-normal text-4xl text-black dark:text-white rounded-lg mx-4">
+					<span className="font-normal text-2xl sm:text-4xl text-black dark:text-white rounded-lg mx-4">
 						|
 					</span>
 					<button
@@ -97,7 +97,7 @@ const IndexPage = () => {
 							className={`${
 								visibleCardSide === "personal" &&
 								"font-semibold text-gray-800 dark:text-gray-200 underline"
-							} text-4xl text-black dark:text-white`}
+							} text-2xl sm:text-4xl text-black dark:text-white`}
 						>
 							Personal
 						</span>
