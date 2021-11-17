@@ -9,7 +9,9 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build",
+    "build": "npm run build-spotify && npm run build-gatsby",
+    "build-gatsby": "gatsby build",
+    "build-spotify": "cd ./plugins/gatsby-source-spotify && npm install",
     "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean",
     "type-check": "tsc --noEmit --skipLibCheck"
@@ -23,7 +25,6 @@
     "gatsby-source-filesystem": "^4.1.3",
     "gatsby-source-rest-api": "^0.2.3",
     "gatsby-source-rss-feed": "^1.2.2",
-    "gatsby-source-spotify": "^1.3.2",
     "gatsby-transformer-json": "^4.1.0",
     "gatsby-transformer-remark": "^5.1.4",
     "gatsby-transformer-sharp": "^4.1.0",
