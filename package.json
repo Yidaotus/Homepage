@@ -9,9 +9,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop -H 0.0.0.0",
-    "build": "npm run build-spotify && npm run build-gatsby",
-    "build-gatsby": "gatsby build",
-    "build-spotify": "cd plugins/gatsby-source-spotify && npm install",
+    "build": "gatsby build",
     "serve": "gatsby serve -H 0.0.0.0",
     "clean": "gatsby clean",
     "type-check": "tsc --noEmit --skipLibCheck"

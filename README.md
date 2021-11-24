@@ -1,4 +1,4 @@
-![Homepage Preview](https://github.com/Yidaotus/Homepage/blob/main/public/preview.png?raw=true)
+![Homepage Preview](https://github.com/Yidaotus/Homepage/blob/main/preview.png?raw=true)
 
 ## My Homepage
 
