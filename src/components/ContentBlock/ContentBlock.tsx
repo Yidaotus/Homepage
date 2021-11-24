@@ -18,8 +18,8 @@ const ContentBlock: React.FC<IContentBlock> = ({
 		} items-start`}
 	>
 		{image && (
-			<div className="w-1/2 mb-4 sm:mb-0 sm:w-1/3 md:w-5/12 m-auto">
-				<GatsbyImage image={image} alt="Charicatur Waving" />
+			<div className="w-1/2 mb-4 sm:mb-0 sm:w-1/3 md:w-5/12 m-auto sm:m-0">
+				<GatsbyImage image={image} alt="Caricature Waving" />
 			</div>
 		)}
 		<div

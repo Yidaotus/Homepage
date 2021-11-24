@@ -17,7 +17,7 @@
 		"title": "Homepage",
 		"description": "This very site.",
 		"image": "./images/homepage_preview.png",
-		"repo": null,
+		"repo": "https://github.com/Yidaotus/Homepage",
 		"link": null
 	}
 ]

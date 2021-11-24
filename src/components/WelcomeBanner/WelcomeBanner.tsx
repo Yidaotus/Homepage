@@ -28,7 +28,7 @@ const WelcomeBanner = () => {
 					} while (oldIndex === newIndex);
 					return newIndex;
 				}),
-			Math.random() * 2000 + 5000
+			Math.random() * 2000 + 3000
 		);
 		return () => clearTimeout(intervalId);
 	}, []);

@@ -15,7 +15,7 @@
 		"id": "about",
 		"image": "./images/char_wave.png",
 		"content": "./mds/about.md",
-		"reversed": false
+		"reversed": true
 	},
 	{
 		"id": "personal",
@@ -24,13 +24,13 @@
 	},
 	{
 		"id": "photography",
-		"image": "./images/char_guitar.png",
+		"image": "./images/char_photo.png",
 		"content": "./mds/photography.md",
 		"reversed": true
 	},
 	{
 		"id": "contact",
-		"image": "./images/char_nihao.png",
+		"image": "./images/char_contact.png",
 		"content": "./mds/contact.md",
 		"reversed": false
 	}

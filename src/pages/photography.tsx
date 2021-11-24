@@ -10,6 +10,7 @@ import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
 import Layout from "../components/Layout";
+import Spacer from "../components/Spacer";
 
 interface ImageProp {
 	full: IGatsbyImageData;
@@ -114,6 +115,7 @@ const IndexPage = () => {
 					content={photoBlockData.content.childMarkdownRemark.html}
 					image={photoImage}
 				/>
+				<Spacer visible />
 				<div className="flex flex-row flex-wrap mx-">
 					{photoGalleryData.map((photoBookImage, index) => (
 						<div
