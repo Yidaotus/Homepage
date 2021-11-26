@@ -1,5 +1,5 @@
 # Photography
-## Some photos I've took
+## Some photos I took
 
 I like landscape/nature and street photography.  
 My equipment:
