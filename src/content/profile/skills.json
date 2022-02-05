@@ -15,6 +15,14 @@
 				"level": 2
 			},
 			{
+				"name": "MUI",
+				"level": 3
+			},
+			{
+				"name": "TailwindCSS",
+				"level": 3
+			},
+			{
 				"name": "MySQL",
 				"level": 2
 			},
@@ -25,6 +33,39 @@
 			{
 				"name": "TypeScript",
 				"level": 3
+			},
+			{
+				"name": "GraphQL",
+				"level": 2
+			},
+			{
+				"name": "REST",
+				"level": 3
+			},
+			{
+				"name": "Emotion",
+				"level": 2
+			},
+			{
+				"name": "Gatsby",
+				"level": 3
+			}
+		]
+	},
+	{
+		"title": "Serverless",
+		"skills": [
+			{
+				"name": "Netlify",
+				"level": 2
+			},
+			{
+				"name": "Vercel",
+				"level": 2
+			},
+			{
+				"name": "Heroku",
+				"level": 2
 			}
 		]
 	},
@@ -77,10 +118,6 @@
 				"level": 3
 			},
 			{
-				"name": "GIT",
-				"level": 3
-			},
-			{
 				"name": "Java",
 				"level": 3
 			}
@@ -100,6 +137,18 @@
 			{
 				"name": "Firewall administration (PfSense)",
 				"level": 2
+			},
+			{
+				"name": "JEST",
+				"level": 3
+			},
+			{
+				"name": "Github Actions",
+				"level": 2
+			},
+			{
+				"name": "GIT",
+				"level": 3
 			}
 		]
 	},
