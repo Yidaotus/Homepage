@@ -1,5 +1,4 @@
 import React from "react";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 export interface ITechInfo {
 	techId: string;
@@ -10,10 +9,19 @@ export interface ITechInfo {
 	};
 }
 
-const TechInfo: React.FC<ITechInfo> = ({ name, link, icon }) => (
+const TechInfo: React.FC<ITechInfo & { size?: number }> = ({
+	name,
+	link,
+	icon,
+	size,
+}) => (
 	<div>
 		<a href={link}>
-			<img src={icon.publicURL} alt={name} className="h-8" />
+			<img
+				src={icon.publicURL}
+				alt={name}
+				className={size ? `h-${size}` : "h-8"}
+			/>
 		</a>
 	</div>
 );

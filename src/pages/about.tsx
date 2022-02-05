@@ -10,6 +10,7 @@ import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
 import Spacer from "../components/Spacer";
+import LikedTech from "../components/LikedTech/LikedTech";
 
 type CardSides = "personal" | "professional";
 
@@ -120,6 +121,11 @@ const IndexPage = () => {
 						<H1>Skills</H1>
 						<H2>Skills I have</H2>
 						<SkillsQL />
+					</div>
+					<div>
+						<H1>Tech I Like</H1>
+						<H2>Tech I am currently using</H2>
+						<LikedTech />
 					</div>
 				</div>
 				<div

@@ -9,6 +9,7 @@ import ContentBlock, {
 } from "../components/ContentBlock/ContentBlock";
 import WelcomeBanner from "../components/WelcomeBanner/WelcomeBanner";
 import Spacer from "../components/Spacer";
+import LikedTech from "../components/LikedTech/LikedTech";
 
 const IndexPage = () => {
 	const indexBlockQuery = useStaticQuery<{
@@ -62,6 +63,11 @@ const IndexPage = () => {
 						<H1>Latest Posts</H1>
 						<H2>Latest posts from my Medium Blog</H2>
 						<MediumFeedQL />
+					</div>
+					<Spacer />
+					<div>
+						<H1>Tech I Like</H1>
+						<LikedTech />
 					</div>
 				</div>
 			</div>
