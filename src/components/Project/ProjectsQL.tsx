@@ -21,6 +21,7 @@ const SkillsQL = () => {
 							gatsbyImageData(width: 856)
 						}
 					}
+					technologies
 				}
 			}
 		}

@@ -4,20 +4,39 @@
 		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content.",
 		"image": "./images/editor_preview.png",
 		"repo": "https://github.com/Yidaotus/YiLangClient",
-		"link": "https://www.google.com"
+		"link": "",
+		"technologies": [
+			"react",
+			"react-query",
+			"mui",
+			"slate",
+			"react-hook-form",
+			"typescript",
+			"express",
+			"mongodb"
+		]
 	},
 	{
 		"title": "Yi-8",
 		"description": "A very simple emulator for the CHIP-8 architecture.",
 		"image": "./images/yi8_preview.png",
 		"repo": "https://github.com/Yidaotus/Yi8",
-		"link": null
+		"link": null,
+		"technologies": [
+			"typescript"
+		]
 	},
 	{
 		"title": "Homepage",
 		"description": "This very site.",
 		"image": "./images/homepage_preview.png",
 		"repo": "https://github.com/Yidaotus/Homepage",
-		"link": null
+		"link": null,
+		"technologies": [
+			"react",
+			"tailwind-css",
+			"gatsby",
+			"netlify"
+		]
 	}
 ]
