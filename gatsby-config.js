@@ -4,22 +4,22 @@ require("dotenv").config({
 
 module.exports = {
 	siteMetadata: {
-		siteUrl: "https://www.yidaou.tech",
-		title: "Yidaou.tech",
-		description: "My personal site",
+		siteUrl: `https://www.yidaou.tech`,
+		title: `Yidaou.tech`,
+		description: `My personal site`,
 		author: {
-			name: "Daniel Voigt",
-			url: "https://yidaotus.medium.com/",
-			email: "d.voigt1993@gmail.com",
+			name: `Daniel Voigt`,
+			url: `https://yidaotus.medium.com/`,
+			email: `d.voigt1993@gmail.com`,
 		},
 		social: {
-			medium: "https://yidaotus.medium.com/",
-			github: "https://github.com/yidaotus",
+			medium: `https://yidaotus.medium.com/`,
+			github: `https://github.com/yidaotus`,
 		},
 	},
 	plugins: [
 		{
-			resolve: "gatsby-plugin-eslint",
+			resolve: `gatsby-plugin-eslint`,
 			options: {
 				test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
 				exclude: /(node_modules|.cache|public)/,
@@ -30,40 +30,41 @@ module.exports = {
 				},
 			},
 		},
-		"gatsby-plugin-postcss",
+		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-postcss`,
 		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: "profile",
+				name: `profile`,
 				path: `./src/content/profile`,
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: "photography_gallery",
+				name: `photography_gallery`,
 				path: `./src/content/photography/images`,
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: "content_blocks",
+				name: `content_blocks`,
 				path: `./src/content/contentBlocks`,
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: "techs",
+				name: `techs`,
 				path: `./src/content/tech`,
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: "projects",
+				name: `projects`,
 				path: `./src/content/projects`,
 			},
 		},

@@ -41,7 +41,7 @@ const ProjectCard: React.FC<IProjectCard> = ({
 				</a>
 				{repo && (
 					<div className="w-8 h-8">
-						<a href={repo} target="_blank" rel="noreferrer">
+						<a href={repo} target="_blank" rel="noreferrer" aria-label="Github">
 							<GitHubIcon size={8} />
 						</a>
 					</div>

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
-import Spacer from "../components/Spacer";
 
 const IndexPage = () => {
 	const contactBlockQuery = useStaticQuery<{
@@ -41,6 +41,11 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Contact</title>
+				<meta name="description" content="How to contact me" />
+			</Helmet>
 			<div className="flex flex-col">
 				<ContentBlock
 					content={contactBlockData.content.childMarkdownRemark.html}

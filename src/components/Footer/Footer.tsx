@@ -10,6 +10,7 @@ const Footer: React.FC = () => (
 				href="https://github.com/Yidaotus/"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Github"
 			>
 				<GitHubIcon size={8} opacity="0.8" />
 			</a>
@@ -17,6 +18,7 @@ const Footer: React.FC = () => (
 				href="https://medium.com/@yidaotus"
 				target="_blank"
 				rel="noreferrer"
+				aria-label="Medium"
 			>
 				<MediumIcon size={8} opacity="0.8" />
 			</a>

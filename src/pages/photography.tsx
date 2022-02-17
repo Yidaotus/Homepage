@@ -6,6 +6,7 @@ import {
 	ImageDataLike,
 } from "gatsby-plugin-image";
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
@@ -90,6 +91,12 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<html lang="en" />
+				<title>Photos I shot</title>
+				<meta name="description" content="Photos I shot as a hobby." />
+			</Helmet>
 			<div className="flex flex-col">
 				<div
 					className={`fixed z-30 bg-black bg-opacity-80 w-full h-full top-0 left-0

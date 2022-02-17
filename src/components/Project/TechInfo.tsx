@@ -21,6 +21,8 @@ const TechInfo: React.FC<ITechInfo & { size?: number }> = ({
 				src={icon.publicURL}
 				alt={name}
 				className={size ? `h-${size}` : "h-8"}
+				width="25"
+				height="25"
 			/>
 		</a>
 	</div>

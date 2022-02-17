@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 import Layout from "../components/Layout";
 import { H1, H2 } from "../components/Typography";
 import MediumFeedQL from "../components/MediumFeed/MediumFeedQL";
@@ -45,6 +46,15 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<html lang="en" />
+				<title>Yidaou.tech</title>
+				<meta
+					name="description"
+					content="Homepage and development experience for me as a full stack developer"
+				/>
+			</Helmet>
 			<div className="flex flex-col">
 				<div className="absolute w-full left-0">
 					<WelcomeBanner />

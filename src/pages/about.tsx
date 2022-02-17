@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import { getImage } from "gatsby-plugin-image";
+import { Helmet } from "react-helmet";
 import ExperienceQL from "../components/Experience/ExperienceQL";
 import Layout from "../components/Layout";
 import SkillsQL from "../components/Skills/SkillsQL";
@@ -62,6 +63,16 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
+			<Helmet>
+				<html lang="en" />
+				<meta charSet="utf-8" />
+				<title>About me</title>
+				<meta
+					name="description"
+					content="About me personally and professionally"
+				/>
+			</Helmet>
+
 			<div className="flex justify-center content-center flex-col relative">
 				<ContentBlock
 					content={indexBlockData[0].content.childMarkdownRemark.html}

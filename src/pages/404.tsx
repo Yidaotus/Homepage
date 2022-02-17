@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
 // styles
@@ -27,6 +28,16 @@ const codeStyles = {
 // markup
 const NotFoundPage = () => (
 	<main style={pageStyles}>
+		<Helmet>
+			<meta charSet="utf-8" />
+			<html lang="en" />
+			<title>404</title>
+			<meta
+				name="description"
+				content="Yidaoutech could not locate this site!"
+			/>
+		</Helmet>
+
 		<title>Not found</title>
 		<h1 style={headingStyles}>Page not found</h1>
 		<p style={paragraphStyles}>

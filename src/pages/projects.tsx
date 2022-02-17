@@ -1,6 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
-import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import ContentBlock, {
 	IContentBlock,
 } from "../components/ContentBlock/ContentBlock";
@@ -38,6 +39,15 @@ const ProjectsPage = () => {
 
 	return (
 		<Layout>
+			<Helmet>
+				<meta charSet="utf-8" />
+				<html lang="en" />
+				<title>Photos I shot</title>
+				<meta
+					name="description"
+					content="Projects I developed either as a hobby project or professionally"
+				/>
+			</Helmet>
 			<div className="flex justify-center content-center flex-col">
 				<ContentBlock
 					content={projectsBlockData.content.childMarkdownRemark.html}
