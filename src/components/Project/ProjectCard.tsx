@@ -35,9 +35,9 @@ const ProjectCard: React.FC<IProjectCard> = ({
 		<div className="p-5">
 			<div className="flex flex-row justify-between">
 				<a href={link || "#"}>
-					<h5 className="text-black dark:text-white font-bold text-2xl tracking-tight mb-2">
+					<h2 className="text-black dark:text-white font-bold text-2xl tracking-tight mb-2">
 						{title}
-					</h5>
+					</h2>
 				</a>
 				{repo && (
 					<div className="w-8 h-8">

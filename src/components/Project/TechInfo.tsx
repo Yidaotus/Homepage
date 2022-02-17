@@ -20,9 +20,8 @@ const TechInfo: React.FC<ITechInfo & { size?: number }> = ({
 			<img
 				src={icon.publicURL}
 				alt={name}
-				className={size ? `h-${size}` : "h-8"}
-				width="25"
-				height="25"
+				className={size ? `h-${size}` : "h-6"}
+				height={size || 20}
 			/>
 		</a>
 	</div>

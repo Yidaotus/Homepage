@@ -29,7 +29,7 @@ const LikedTech: React.FC = () => {
 			<div className="flex flex-row space-x-4 flex-wrap">
 				{techData.map((tech) => (
 					<div className="mt-4">
-						<TechInfo {...tech} size={16} />
+						<TechInfo {...tech} size={14} />
 					</div>
 				))}
 			</div>
