@@ -65,7 +65,7 @@ type PollingMode = "STATIC" | "CALCULATED";
 const BUFFER_TIME = 5000;
 const WAIT_ON_ERROR = 60000;
 const POLLING_RATE = 10000;
-const POLLING_MODE: PollingMode = "STATIC";
+const POLLING_MODE: PollingMode = "CALCULATED";
 
 const useCurrentlyPlaying = () => {
 	const [playingItem, setPlayingItem] = useState<SpotifyPlayer>();
