@@ -40,7 +40,7 @@ const IndexPage = () => {
 		: undefined;
 
 	return (
-		<Layout>
+		<div>
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>Contact</title>
@@ -53,7 +53,7 @@ const IndexPage = () => {
 					reversed={contactBlockData.reversed}
 				/>
 			</div>
-		</Layout>
+		</div>
 	);
 };
 

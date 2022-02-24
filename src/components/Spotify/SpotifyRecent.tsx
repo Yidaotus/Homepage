@@ -37,7 +37,7 @@ const SpotifyRecent: React.FC<{ tracks: Array<ISpotifyTrack> }> = ({
 						image={
 							getImage(track.image.localFile) as IGatsbyImageData
 						}
-						alt="Charicatur Waving"
+						alt="Caricature Waving"
 					/>
 				</li>
 			))}

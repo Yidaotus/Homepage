@@ -45,7 +45,7 @@ const IndexPage = () => {
 		: undefined;
 
 	return (
-		<Layout>
+		<div>
 			<Helmet>
 				<meta charSet="utf-8" />
 				<html lang="en" />
@@ -81,7 +81,7 @@ const IndexPage = () => {
 					</div>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
+import SpotifyCurrentlyPlaying from "./Spotify/SpotifyCurrentlyPlaying";
 
 const Layout: React.FC = ({ children }) => (
 	<div className="bg-white dark:bg-black min-h-screen">
@@ -10,6 +11,7 @@ const Layout: React.FC = ({ children }) => (
 			<footer className="h-16">
 				<Footer />
 			</footer>
+			<SpotifyCurrentlyPlaying />
 		</div>
 	</div>
 );

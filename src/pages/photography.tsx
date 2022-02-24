@@ -90,7 +90,7 @@ const IndexPage = () => {
 	];
 
 	return (
-		<Layout>
+		<div>
 			<Helmet>
 				<meta charSet="utf-8" />
 				<html lang="en" />
@@ -153,7 +153,7 @@ const IndexPage = () => {
 					))}
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 };
 

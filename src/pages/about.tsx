@@ -12,6 +12,7 @@ import ContentBlock, {
 } from "../components/ContentBlock/ContentBlock";
 import Spacer from "../components/Spacer";
 import LikedTech from "../components/LikedTech/LikedTech";
+import SpotifyCurrentlyPlaying from "../components/Spotify/SpotifyCurrentlyPlaying";
 
 type CardSides = "personal" | "professional";
 
@@ -62,7 +63,7 @@ const IndexPage = () => {
 		: undefined;
 
 	return (
-		<Layout>
+		<div>
 			<Helmet>
 				<html lang="en" />
 				<meta charSet="utf-8" />
@@ -164,7 +165,7 @@ const IndexPage = () => {
 					</div>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 };
 
