@@ -57,7 +57,7 @@ export default function MobileMenu() {
 			exitDelay: 300,
 		});
 
-	function toggleMenu() {
+	const toggleMenu = () => {
 		if (isMenuOpen) {
 			setIsMenuOpen(false);
 			document.body.style.overflow = "";
@@ -65,7 +65,7 @@ export default function MobileMenu() {
 			setIsMenuOpen(true);
 			document.body.style.overflow = "hidden";
 		}
-	}
+	};
 
 	useEffect(
 		() =>
@@ -102,7 +102,17 @@ export default function MobileMenu() {
 								}}
 							>
 								<Link to={menuItem.link}>
-									<a className="flex w-auto pb-4">
+									<a
+										className="flex w-auto pb-4"
+										onClick={() => {
+											setIsMenuOpen(false);
+										}}
+										role="link"
+										tabIndex={0}
+										onKeyPress={() => {
+											setIsMenuOpen(false);
+										}}
+									>
 										{menuItem.name}
 									</a>
 								</Link>
