@@ -105,12 +105,12 @@ export default function MobileMenu() {
 									<a
 										className="flex w-auto pb-4"
 										onClick={() => {
-											setIsMenuOpen(false);
+											toggleMenu();
 										}}
 										role="link"
 										tabIndex={0}
 										onKeyPress={() => {
-											setIsMenuOpen(false);
+											toggleMenu();
 										}}
 									>
 										{menuItem.name}
