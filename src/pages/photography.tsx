@@ -78,10 +78,7 @@ const IndexPage = () => {
 	const photoGalleryData = photoBlockQuery.allFile.nodes;
 
 	const galleryPosition = [
-		[0, 20],
-		[0, 20],
-		[0, 20],
-		[0, 20],
+		[50, 50],
 		[0, 20],
 		[0, 48],
 		[0, 30],
@@ -91,6 +88,9 @@ const IndexPage = () => {
 		[0, 50],
 		[0, 18],
 		[0, 45],
+		[0, 100],
+		[0, 80],
+		[0, 20],
 	];
 
 	return (

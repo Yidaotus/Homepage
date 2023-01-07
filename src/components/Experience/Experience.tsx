@@ -26,7 +26,7 @@ const dateString = (start: string, end: string | null) =>
 const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
 	experiences,
 }) => (
-	<div className="flex flex-col md:grid grid-cols-9 sm:p-2">
+	<div className="flex flex-col md:grid grid-cols-12 sm:p-2">
 		{experiences.sort(sortExperience).map((experience) => (
 			<div className="flex md:contents" key={experience.title}>
 				<div className="hidden md:block my-4 col-start-1 col-end-3 mr-auto w-full self-center pb-1.5">
@@ -40,14 +40,14 @@ const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
 					</div>
 					<div className="w-4 h-4 absolute top-1/2 -mt-3 rounded-full bg-gray-600 dark:bg-gray-300 shadow" />
 				</div>
-				<div className="col-start-4 col-end-10 pd-0 md:p-4 my-4 mr-auto w-full">
+				<div className="col-start-4 col-end-12 pd-0 md:p-0 my-4 mr-auto w-full">
 					<p className="font-semibold text-2xl mb-1">
 						{experience.title}
 					</p>
 					<p className="font-semibold text-lg text-brand mb-1">
 						{experience.company}
 					</p>
-					<div className="leading-tight text-justify">
+					<div className="leading-tight text-left">
 						<p className="md:hidden">
 							{dateString(
 								experience.startDate,
@@ -56,7 +56,7 @@ const Experience: React.FC<{ experiences: Array<IExperienceData> }> = ({
 						</p>
 						<ul className="list-disc list-outside text-gray-600 dark:text-gray-400 pl-4 mt-2">
 							{experience.activities.map((activity) => (
-								<li key={activity}>{activity}</li>
+								<li className="py-1" key={activity}>{activity}</li>
 							))}
 						</ul>
 					</div>
