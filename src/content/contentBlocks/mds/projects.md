@@ -6,5 +6,5 @@ Here are some recent projects I've been working on and their respective source c
 - React / Vue
 - Rust
 - PostgreSQL / MongoDB
-- Docker
-- Linux 
+- Vercel / Netlify / Supabase
+- tRPC / GraphQL 
