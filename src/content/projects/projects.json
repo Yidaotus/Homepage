@@ -1,5 +1,25 @@
 [
 	{
+		"title": "YiLang 2.0",
+		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content. A rewrite of YiLang with a more modern stack.",
+		"image": "./images/yilang2.png",
+		"repo": "https://github.com/Yidaotus/YiLang2",
+		"link": "https://yilang.yidaou.tech",
+		"technologies": [
+			"react",
+			"react-query",
+			"chakra",
+			"lexical",
+			"nextjs",
+			"react-hook-form",
+			"typescript",
+			"trpc",
+			"tailwind-css",
+			"postgresql",
+			"prisma"
+		]
+	},
+	{
 		"title": "YiLang",
 		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content.",
 		"image": "./images/editor_preview.png",

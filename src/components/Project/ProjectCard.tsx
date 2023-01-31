@@ -21,7 +21,7 @@ const ProjectCard: React.FC<IProjectCard> = ({
 	technologies,
 }) => (
 	<div className="bg-white dark:bg-brand-slightdark shadow-md border border-gray-200 dark:border-gray-900 rounded mb-5">
-		<a href="#">
+		<a href={link}>
 			<GatsbyImage
 				image={getImage(image) as IGatsbyImageData}
 				alt="YiLang Preview"

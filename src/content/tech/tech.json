@@ -1,12 +1,49 @@
 [
 	{
+		"techId": "prisma",
+		"name": "Prisma",
+		"link": "https://prisma.io",
+		"icon": "./icons/prisma.svg"
+	},
+	{
+		"techId": "postgresql",
+		"name": "PostgreSQL",
+		"link": "https://www.postgresql.org/",
+		"icon": "./icons/postgresql.svg"
+	},
+	{
+		"techId": "trpc",
+		"name": "tRPC",
+		"link": "https://trpc.io/",
+		"icon": "./icons/trpc.svg"
+	},
+	{
+		"techId": "nextjs",
+		"name": "Nextjs",
+		"link": "https://nextjs.org/",
+		"icon": "./icons/nextjs.svg"
+	},
+	{
+		"techId": "lexical",
+		"name": "Lexical",
+		"link": "https://lexical.dev/",
+		"icon": "./icons/lexical.svg"
+	},
+	{
+		"techId": "chakra",
+		"name": "Chakra",
+		"link": "https://chakra-ui.com/",
+		"icon": "./icons/chakra.svg"
+	},
+
+	{
 		"techId": "react",
 		"name": "React",
 		"link": "https://reactjs.org/",
 		"icon": "./icons/react.svg"
 	},
 	{
-		"techId": "react-quer",
+		"techId": "react-query",
 		"name": "React Query",
 		"link": "https://react-query.tanstack.com/",
 		"icon": "./icons/react-query.svg"
