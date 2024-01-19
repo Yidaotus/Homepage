@@ -20,6 +20,14 @@
 		]
 	},
 	{
+		"title": "YiLang Marketing Page",
+		"description": "Engaging marketing page for YiLang.",
+		"image": "./images/yi-web.png",
+		"repo": "https://github.com/Yidaotus/YiLangClient",
+		"link": "yilang-web.yidaou.tech",
+		"technologies": ["nextjs", "react", "framer-motion", "typescript"]
+	},
+	{
 		"title": "YiLang",
 		"description": "YiLang helps you study new languages by providing a variety of tools for learning a variety of different content.",
 		"image": "./images/editor_preview.png",
@@ -42,9 +50,7 @@
 		"image": "./images/yi8_preview.png",
 		"repo": "https://github.com/Yidaotus/Yi8",
 		"link": null,
-		"technologies": [
-			"typescript"
-		]
+		"technologies": ["typescript"]
 	},
 	{
 		"title": "Homepage",
@@ -52,11 +58,6 @@
 		"image": "./images/homepage_preview.png",
 		"repo": "https://github.com/Yidaotus/Homepage",
 		"link": null,
-		"technologies": [
-			"react",
-			"tailwind-css",
-			"gatsby",
-			"netlify"
-		]
+		"technologies": ["react", "tailwind-css", "gatsby", "netlify"]
 	}
 ]

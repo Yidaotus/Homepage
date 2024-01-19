@@ -35,7 +35,18 @@
 		"link": "https://chakra-ui.com/",
 		"icon": "./icons/chakra.svg"
 	},
-
+	{
+		"techId": "nextjs",
+		"name": "Next.js",
+		"link": "https://nextjs.org/",
+		"icon": "./icons/next-js.svg"
+	},
+	{
+		"techId": "framer-motion",
+		"name": "Framer Motion",
+		"link": "framer.com",
+		"icon": "./icons/framer-motion.svg"
+	},
 	{
 		"techId": "react",
 		"name": "React",

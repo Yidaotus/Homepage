@@ -4,7 +4,7 @@ Software development is not just my job but also my biggest hobby. Creating thin
 
 ## 🎸 Musician
 
-I don't listen to genres but to music. I like to play guitar, especially fingerstyle, piano and would like to add saxophone to the list.
+I like to play guitar, especially fingerstyle, piano and would like to add saxophone to the list. Currently into modern Jazz, foreign rock/pop and rock/metal.
 
 ## 💬 Language Enthusiast
 
