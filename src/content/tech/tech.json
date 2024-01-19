@@ -1,5 +1,17 @@
 [
 	{
+		"techId": "svelte",
+		"name": "Svelte",
+		"link": "svelte.dev",
+		"icon": "./icons/svelte.svg"
+	},
+	{
+		"techId": "obsidian",
+		"name": "Obsidian",
+		"link": "https://obsidian.md/",
+		"icon": "./icons/obsidian.svg"
+	},
+	{
 		"techId": "prisma",
 		"name": "Prisma",
 		"link": "https://prisma.io",
@@ -16,12 +28,6 @@
 		"name": "tRPC",
 		"link": "https://trpc.io/",
 		"icon": "./icons/trpc.svg"
-	},
-	{
-		"techId": "nextjs",
-		"name": "Nextjs",
-		"link": "https://nextjs.org/",
-		"icon": "./icons/nextjs.svg"
 	},
 	{
 		"techId": "lexical",
